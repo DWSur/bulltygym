@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BULLTY GYM | Club de Fuerza y Rendimiento en Alcalá la Real</title>
+    <meta name="description" content="Gimnasio en Alcalá la Real. Coaching profesional, equipamiento de élite (Life Fitness, OSS) y programas personalizados. Construye fuerza, forja disciplina.">
+    
+    <!-- SEO: Canonical & Social -->
+    <link rel="canonical" href="https://bulltygym.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_ES">
+    <meta property="og:site_name" content="BULLTY GYM">
+    <meta property="og:title" content="BULLTY GYM | Club de Fuerza y Rendimiento">
+    <meta property="og:description" content="Entrenamiento de fuerza, culturismo y coaching personalizado en Alcalá la Real. Sin atajos, solo resultados.">
+    <meta property="og:image" content="./img/hero-gym-background.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#E60000',
+                        dark: '#0D0D0D',
+                        darker: '#050505',
+                        surface: '#151515',
+                        muted: '#A8A8A8'
+                    },
+                    fontFamily: {
+                        display: ['"Bebas Neue"', 'sans-serif'],
+                        heading: ['"Oswald"', 'sans-serif'],
+                        body: ['"Inter"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Custom CSS & Animations -->
+    <style>
+        body { background-color: #0D0D0D; color: white; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        
+        .red-glow { box-shadow: 0 0 20px rgba(230, 0, 0, 0.4); }
+        .red-glow-strong { box-shadow: 0 0 30px rgba(230, 0, 0, 0.6); }
+        .red-text-glow { text-shadow: 0 0 20px rgba(230, 0, 0, 0.5); }
+        
+        .grid-lines {
+            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        
+        .text-stroke {
+            -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+            color: transparent;
+        }
+        
+        .map-dark { filter: invert(90%) hue-rotate(180deg) brightness(85%) contrast(85%); }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes scaleIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        @keyframes scrollIndicator { 0% { transform: translateY(0); opacity: 1; } 100% { transform: translateY(8px); opacity: 0; } }
+        @keyframes smoke { 0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.1; } 50% { transform: translate(10px, -10px) scale(1.1); opacity: 0.2; } }
+        @keyframes pulseGlow { 0%, 100% { box-shadow: 0 0 20px rgba(230, 0, 0, 0.4); } 50% { box-shadow: 0 0 35px rgba(230, 0, 0, 0.7); } }
+
+        .animate-fade-in { animation: fadeIn 1s ease-out forwards; }
+        .animate-fade-up { animation: fadeUp 0.8s ease-out forwards; opacity: 0; }
+        .animate-scale-in { animation: scaleIn 1s ease-out forwards; }
+        .animate-scroll-indicator { animation: scrollIndicator 1.5s infinite; }
+        .animate-smoke { animation: smoke 8s infinite ease-in-out; }
+        .animate-pulse-glow { animation: pulseGlow 2s infinite; }
+
+        /* Scroll Reveal */
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.visible { opacity: 1; transform: translateY(0); }
+        .reveal-delay-1 { transition-delay: 0.1s; }
+        .reveal-delay-2 { transition-delay: 0.2s; }
+        .reveal-delay-3 { transition-delay: 0.3s; }
+        .reveal-delay-4 { transition-delay: 0.4s; }
+
+        /* Cookie Modal */
+        #cookie-modal { animation: fadeIn 0.3s ease-out; }
+        
+        /* Toggle Switch */
+        .peer:checked ~ div { background-color: #E60000; }
+
+        /* Menú activo - subrayado */
+        .nav-link.active {
+            color: white !important;
+        }
+        .nav-link.active::after {
+            width: 100% !important;
+        }
+    </style>
+
+    <!-- Schema.org JSON-LD (SEO Local) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HealthClub",
+      "name": "BULLTY GYM",
+      "alternateName": "Club de Fuerza y Rendimiento BULLTY",
+      "description": "Gimnasio en Alcalá la Real especializado en entrenamiento de fuerza, culturismo y coaching personalizado con equipamiento de élite.",
+      "url": "https://bulltygym.com",
+      "telephone": "+34600123456",
+      "email": "bulltygym@hotmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Calle Guadalquivir, Polígono Fuente Granada",
+        "addressLocality": "Alcalá la Real",
+        "addressRegion": "Jaén",
+        "postalCode": "23680",
+        "addressCountry": "ES"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.4611,
+        "longitude": -3.9225
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "10:30",
+          "closes": "14:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+          "opens": "16:30",
+          "closes": "22:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "12:00",
+          "closes": "14:00"
+        }
+      ],
+      "priceRange": "€€",
+      "image": "./img/hero-gym-background.png"
+    }
+    </script>
+</head>
+<body class="bg-dark text-white antialiased">
+
+<div id="root" class="min-h-screen">
+    
+    <!-- HEADER -->
+    <header id="main-header" class="fixed top-0 inset-x-0 z-50 transition-all duration-500 bg-transparent py-4">
+        <nav class="mx-auto max-w-7xl px-5 sm:px-8 flex items-center justify-between">
+            <a href="#home" class="flex items-center group">
+                <img src="./img/logo-bullty-gym.png" alt="Logo de BULLTY GYM" class="h-12 sm:h-14 w-auto object-contain transition-transform duration-500 group-hover:scale-105">
+            </a>
+            <ul class="hidden lg:flex items-center gap-8">
+                <li><a href="#home" class="nav-link font-heading text-sm uppercase tracking-widest transition-colors duration-300 relative after:absolute after:-bottom-1.5 after:left-0 after:h-px after:bg-primary after:transition-all after:duration-300 text-white after:w-full">Inicio</a></li>
+                <li><a href="#services" class="nav-link font-heading text-sm uppercase tracking-widest transition-colors duration-300 relative after:absolute after:-bottom-1.5 after:left-0 after:h-px after:bg-primary after:transition-all after:duration-300 text-muted hover:text-white after:w-0 hover:after:w-full">Disciplinas</a></li>
+                <li><a href="#facilities" class="nav-link font-heading text-sm uppercase tracking-widest transition-colors duration-300 relative after:absolute after:-bottom-1.5 after:left-0 after:h-px after:bg-primary after:transition-all after:duration-300 text-muted hover:text-white after:w-0 hover:after:w-full">Instalaciones</a></li>
+                <li><a href="#about" class="nav-link font-heading text-sm uppercase tracking-widest transition-colors duration-300 relative after:absolute after:-bottom-1.5 after:left-0 after:h-px after:bg-primary after:transition-all after:duration-300 text-muted hover:text-white after:w-0 hover:after:w-full">Nosotros</a></li>
+                <li><a href="#faq" class="nav-link font-heading text-sm uppercase tracking-widest transition-colors duration-300 relative after:absolute after:-bottom-1.5 after:left-0 after:h-px after:bg-primary after:transition-all after:duration-300 text-muted hover:text-white after:w-0 hover:after:w-full">FAQ</a></li>
+                <li><a href="#contact" class="nav-link font-heading text-sm uppercase tracking-widest transition-colors duration-300 relative after:absolute after:-bottom-1.5 after:left-0 after:h-px after:bg-primary after:transition-all after:duration-300 text-muted hover:text-white after:w-0 hover:after:w-full">Contacto</a></li>
+            </ul>
+            <div class="flex items-center gap-3">
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-6 py-2.5 bg-primary text-white font-heading text-sm uppercase tracking-widest hover:bg-white hover:text-primary transition-all duration-300 red-glow rounded-md">Únete</a>
+                <button id="btn-menu" class="lg:hidden text-white" aria-label="Menú">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="lg:hidden overflow-hidden transition-all duration-500 max-h-0 bg-dark/95 backdrop-blur-xl border-t border-surface">
+            <ul class="px-5 py-4 flex flex-col gap-1">
+                <li><a href="#home" class="menu-link block py-3 font-heading uppercase tracking-widest text-muted hover:text-white border-b border-surface">Inicio</a></li>
+                <li><a href="#services" class="menu-link block py-3 font-heading uppercase tracking-widest text-muted hover:text-white border-b border-surface">Disciplinas</a></li>
+                <li><a href="#facilities" class="menu-link block py-3 font-heading uppercase tracking-widest text-muted hover:text-white border-b border-surface">Instalaciones</a></li>
+                <li><a href="#about" class="menu-link block py-3 font-heading uppercase tracking-widest text-muted hover:text-white border-b border-surface">Nosotros</a></li>
+                <li><a href="#faq" class="menu-link block py-3 font-heading uppercase tracking-widest text-muted hover:text-white border-b border-surface">FAQ</a></li>
+                <li><a href="#contact" class="menu-link block py-3 font-heading uppercase tracking-widest text-muted hover:text-white border-b border-surface">Contacto</a></li>
+                <li class="mt-3"><a href="#contact" class="inline-flex w-full items-center justify-center px-6 py-3 bg-primary text-white font-heading uppercase tracking-widest rounded-md">Únete ahora</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+            <div class="absolute inset-0">
+                <img src="./img/hero-gym-background.png" alt="Interior del gimnasio con iluminación cinematográfica roja" class="h-full w-full object-cover">
+                <div class="absolute inset-0 bg-gradient-to-r from-dark via-dark/85 to-dark/30"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-dark via-transparent to-dark/70"></div>
+                <div class="absolute inset-0 grid-lines opacity-40"></div>
+                <div class="absolute -right-32 top-1/4 h-[520px] w-[520px] rounded-full bg-primary/20 blur-[130px]"></div>
+            </div>
+            <div class="pointer-events-none absolute inset-0">
+                <div class="absolute bottom-0 left-1/4 h-72 w-96 rounded-full bg-primary/10 blur-[90px] animate-smoke"></div>
+                <div class="absolute bottom-10 right-1/4 h-56 w-80 rounded-full bg-primary/10 blur-[80px] animate-smoke" style="animation-delay: 3s;"></div>
+            </div>
+            
+            <div class="relative z-10 mx-auto max-w-7xl w-full px-5 sm:px-8 pt-28 pb-28 grid lg:grid-cols-12 gap-10 items-center">
+                <div class="lg:col-span-7">
+                    <span class="inline-flex items-center gap-2 px-4 py-1.5 border border-primary/50 rounded-full font-heading text-xs uppercase tracking-[0.3em] text-primary animate-fade-in">Club de Fuerza y Rendimiento</span>
+                    <h1 class="mt-6 font-display text-6xl sm:text-7xl lg:text-8xl xl:text-9xl leading-[0.88] text-white animate-fade-up">Construye fuerza.<br>Forja <span class="text-primary red-text-glow">disciplina.</span></h1>
+                    <p class="mt-6 max-w-xl text-lg text-muted leading-relaxed animate-fade-up" style="animation-delay: 0.15s;">Coaching profesional, equipamiento de élite y un método sin atajos. Aquí no se promete magia: se entrena con criterio.</p>
+                    <div class="mt-9 flex flex-wrap items-center gap-4 animate-fade-up" style="animation-delay: 0.3s;">
+                        <a href="#contact" class="inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-heading text-base uppercase tracking-widest hover:bg-white hover:text-primary transition-all duration-300 red-glow rounded-md animate-pulse-glow">Únete ahora</a>
+                        <a href="https://wa.me/34600123456?text=Hola%20BULLTY%20GYM%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20membres%C3%ADas." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-8 py-4 border border-white/20 text-white font-heading text-base uppercase tracking-widest hover:border-primary hover:text-primary transition-all duration-300 rounded-md">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg> WhatsApp
+                        </a>
+                    </div>
+                    <div class="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 animate-fade-up" style="animation-delay: 0.45s;">
+                        <div class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span><span class="font-heading text-sm uppercase tracking-[0.25em] text-white/90">Fuerza</span></div>
+                        <div class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span><span class="font-heading text-sm uppercase tracking-[0.25em] text-white/90">Enfoque</span></div>
+                        <div class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span><span class="font-heading text-sm uppercase tracking-[0.25em] text-white/90">Disciplina</span></div>
+                    </div>
+                </div>
+                <div class="lg:col-span-5 flex justify-center lg:justify-end">
+                    <div class="relative w-full max-w-md">
+                        <div class="absolute inset-0 bg-primary/25 blur-3xl scale-105 rounded-3xl"></div>
+                        <img src="./img/logo-bullty-gym.png" alt="Logo de BULLTY GYM con el Bull Terrier" class="relative w-full h-auto object-contain animate-scale-in drop-shadow-[0_0_40px_rgba(230,0,0,0.45)]">
+                    </div>
+                </div>
+            </div>
+            
+            <a href="#why" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-muted hover:text-white transition-colors">
+                <span class="font-heading text-[10px] uppercase tracking-[0.4em]">Desliza</span>
+                <span class="flex h-9 w-5 items-start justify-center rounded-full border border-white/30 p-1">
+                    <span class="h-2 w-1 rounded-full bg-primary animate-scroll-indicator"></span>
+                </span>
+            </a>
+        </section>
+
+        <!-- WHY US -->
+        <section id="why" class="relative py-28 px-5 sm:px-8 border-t border-surface">
+            <div class="mx-auto max-w-7xl">
+                <div class="reveal max-w-2xl">
+                    <span class="font-heading text-xs uppercase tracking-[0.4em] text-primary">Por qué Bullty</span>
+                    <h2 class="mt-3 font-display text-5xl sm:text-6xl text-white leading-none">PENSADO PARA QUIEN NO SE CONFORMA CON <span class="text-primary">LO ORDINARIO.</span></h2>
+                </div>
+                <div class="mt-16 grid md:grid-cols-3 gap-px bg-surface rounded-xl overflow-hidden">
+                    <div class="reveal reveal-delay-1 group relative bg-dark p-10 transition-all duration-500 hover:bg-surface">
+                        <div class="absolute top-0 left-0 h-px w-0 bg-primary transition-all duration-500 group-hover:w-full"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-primary transition-transform duration-500 group-hover:scale-110"><path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path><circle cx="12" cy="8" r="6"></circle></svg>
+                        <h3 class="mt-6 font-heading text-2xl uppercase tracking-wide text-white">Coaches</h3>
+                        <p class="mt-3 text-muted leading-relaxed">Entrenadores con experiencia competitiva. Cada repetición y cada decisión, supervisadas.</p>
+                    </div>
+                    <div class="reveal reveal-delay-2 group relative bg-dark p-10 transition-all duration-500 hover:bg-surface">
+                        <div class="absolute top-0 left-0 h-px w-0 bg-primary transition-all duration-500 group-hover:w-full"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-primary transition-transform duration-500 group-hover:scale-110"><path d="M14.4 14.4 9.6 9.6"></path><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"></path></svg>
+                        <h3 class="mt-6 font-heading text-2xl uppercase tracking-wide text-white">Equipamiento de Élite</h3>
+                        <p class="mt-3 text-muted leading-relaxed">Equipamiento de Life Fitness, OSS Fitness y AdanSport, calibrado para rendimiento serio.</p>
+                    </div>
+                    <div class="reveal reveal-delay-3 group relative bg-dark p-10 transition-all duration-500 hover:bg-surface">
+                        <div class="absolute top-0 left-0 h-px w-0 bg-primary transition-all duration-500 group-hover:w-full"></div>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-primary transition-transform duration-500 group-hover:scale-110"><circle cx="12" cy="12" r="10"></circle><circle cx="12" cy="12" r="6"></circle><circle cx="12" cy="12" r="2"></circle></svg>
+                        <h3 class="mt-6 font-heading text-2xl uppercase tracking-wide text-white">Programas Personalizados</h3>
+                        <p class="mt-3 text-muted leading-relaxed">Diseñados sobre tu cuerpo, tus objetivos y tu calendario. Sin plantillas, sin improvisar.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section id="services" class="relative py-28 px-5 sm:px-8 border-t border-surface">
+            <div class="mx-auto max-w-7xl">
+                <div class="reveal flex flex-wrap items-end justify-between gap-6">
+                    <div class="max-w-2xl">
+                        <span class="font-heading text-xs uppercase tracking-[0.4em] text-primary">El Programa</span>
+                        <h2 class="mt-3 font-display text-5xl sm:text-6xl text-white leading-none">DISCIPLINAS DE <span class="text-primary">ENTRENAMIENTO</span></h2>
+                    </div>
+                    <p class="max-w-sm text-muted">Seis caminos hacia la fuerza. Elige tu disciplina o combínalas: cada programa se construye sobre ti.</p>
+                </div>
+                <div class="mt-16 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+                    <!-- Service 1 -->
+                    <article class="reveal reveal-delay-1 group relative overflow-hidden rounded-2xl border border-surface bg-surface min-h-[360px] flex flex-col justify-end transition-all duration-500 hover:border-primary/60 hover:-translate-y-1">
+                        <img src="./img/entrenamiento-fuerza.jpg" alt="Entrenamiento de Fuerza" loading="lazy" class="absolute inset-0 h-full w-full transition-all duration-700 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 brightness-125">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/25 to-transparent"></div>
+                        <div class="relative p-7">
+                            <div class="flex items-center gap-3">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M14.4 14.4 9.6 9.6"></path><path d="M18.657 21.485a2 2 0 1 1-2.829-2.828l-1.767 1.768a2 2 0 1 1-2.829-2.829l6.364-6.364a2 2 0 1 1 2.829 2.829l-1.768 1.767a2 2 0 1 1 2.828 2.829z"></path></svg>
+                                </span>
+                            </div>
+                            <h3 class="mt-5 font-heading text-2xl uppercase tracking-wide text-white">Entrenamiento de Fuerza</h3>
+                            <p class="mt-2 text-sm text-muted leading-relaxed max-h-0 opacity-0 overflow-hidden transition-all duration-500 group-hover:max-h-28 group-hover:opacity-100">Desarrolla potencia bruta con progresión basada en sobrecarga probada.</p>
+                        </div>
+                    </article>
+                    <!-- Service 2 -->
+                    <article class="reveal reveal-delay-2 group relative overflow-hidden rounded-2xl border border-surface bg-surface min-h-[360px] flex flex-col justify-end transition-all duration-500 hover:border-primary/60 hover:-translate-y-1">
+                        <img src="./img/culturismo.jpg" alt="Culturismo" loading="lazy" class="absolute inset-0 h-full w-full transition-all duration-700 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 brightness-125">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/25 to-transparent"></div>
+                        <div class="relative p-7">
+                            <div class="flex items-center gap-3">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg>
+                                </span>
+                            </div>
+                            <h3 class="mt-5 font-heading text-2xl uppercase tracking-wide text-white">Culturismo</h3>
+                            <p class="mt-2 text-sm text-muted leading-relaxed max-h-0 opacity-0 overflow-hidden transition-all duration-500 group-hover:max-h-28 group-hover:opacity-100">Esculpe un físico de competición con rutinas orientadas a la hipertrofia.</p>
+                        </div>
+                    </article>
+                    <!-- Service 3 -->
+                    <article class="reveal reveal-delay-3 group relative overflow-hidden rounded-2xl border border-surface bg-surface min-h-[360px] flex flex-col justify-end transition-all duration-500 hover:border-primary/60 hover:-translate-y-1">
+                        <img src="./img/entrenamiento-personal.jpg" alt="Entrenamiento Personal" loading="lazy" class="absolute inset-0 h-full w-full transition-all duration-700 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 brightness-125">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/25 to-transparent"></div>
+                        <div class="relative p-7">
+                            <div class="flex items-center gap-3">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                                </span>
+                            </div>
+                            <h3 class="mt-5 font-heading text-2xl uppercase tracking-wide text-white">Entrenamiento Personal</h3>
+                            <p class="mt-2 text-sm text-muted leading-relaxed max-h-0 opacity-0 overflow-hidden transition-all duration-500 group-hover:max-h-28 group-hover:opacity-100">Coaching uno a uno adaptado a tus objetivos y tu biomecánica.</p>
+                        </div>
+                    </article>
+                    <!-- Service 4 -->
+                    <article class="reveal reveal-delay-1 group relative overflow-hidden rounded-2xl border border-surface bg-surface min-h-[360px] flex flex-col justify-end transition-all duration-500 hover:border-primary/60 hover:-translate-y-1">
+                        <img src="./img/entrenamiento-funcional.jpg" alt="Entrenamiento Funcional" loading="lazy" class="absolute inset-0 h-full w-full transition-all duration-700 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 brightness-125">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/25 to-transparent"></div>
+                        <div class="relative p-7">
+                            <div class="flex items-center gap-3">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"></path></svg>
+                                </span>
+                            </div>
+                            <h3 class="mt-5 font-heading text-2xl uppercase tracking-wide text-white">Entrenamiento Funcional</h3>
+                            <p class="mt-2 text-sm text-muted leading-relaxed max-h-0 opacity-0 overflow-hidden transition-all duration-500 group-hover:max-h-28 group-hover:opacity-100">Muévete mejor y más fuerte con trabajo atlético multiplanar.</p>
+                        </div>
+                    </article>
+                    <!-- Service 5 -->
+                    <article class="reveal reveal-delay-2 group relative overflow-hidden rounded-2xl border border-surface bg-surface min-h-[360px] flex flex-col justify-end transition-all duration-500 hover:border-primary/60 hover:-translate-y-1">
+                        <img src="./img/perdida-grasa.jpg" alt="Pérdida de Grasa" loading="lazy" class="absolute inset-0 h-full w-full transition-all duration-700 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 brightness-125">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/25 to-transparent"></div>
+                        <div class="relative p-7">
+                            <div class="flex items-center gap-3">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>
+                                </span>
+                            </div>
+                            <h3 class="mt-5 font-heading text-2xl uppercase tracking-wide text-white">Pérdida de Grasa</h3>
+                            <p class="mt-2 text-sm text-muted leading-relaxed max-h-0 opacity-0 overflow-hidden transition-all duration-500 group-hover:max-h-28 group-hover:opacity-100">Reducción sostenible basada en ciencia, disciplina y seguimiento.</p>
+                        </div>
+                    </article>
+                    <!-- Service 6 -->
+                    <article class="reveal reveal-delay-3 group relative overflow-hidden rounded-2xl border border-surface bg-surface min-h-[360px] flex flex-col justify-end transition-all duration-500 hover:border-primary/60 hover:-translate-y-1">
+                        <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,rgba(230,0,0,0.22),transparent_62%)]"></div>
+                        <img src="./img/suplementacion-proteina.png" alt="Suplementación Deportiva" loading="lazy" class="absolute inset-0 h-full w-full transition-all duration-700 object-contain mix-blend-screen opacity-95 p-6 sm:p-10 group-hover:scale-[1.04]">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/25 to-transparent"></div>
+                        <div class="relative p-7">
+                            <div class="flex items-center gap-3">
+                                <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7.2 8h9.6l-1-3H8.2z"></path><rect x="6.3" y="8" width="11.4" height="11" rx="1.6"></rect></svg>
+                                </span>
+                            </div>
+                            <h3 class="mt-5 font-heading text-2xl uppercase tracking-wide text-white">Suplementación Deportiva</h3>
+                            <p class="mt-2 text-sm text-muted leading-relaxed max-h-0 opacity-0 overflow-hidden transition-all duration-500 group-hover:max-h-28 group-hover:opacity-100">Planes de precisión que alimentan el rendimiento y la recuperación.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FACILITIES -->
+        <section id="facilities" class="relative py-28 px-5 sm:px-8 border-t border-surface">
+            <div class="mx-auto max-w-7xl">
+                <div class="reveal max-w-2xl">
+                    <span class="font-heading text-xs uppercase tracking-[0.4em] text-primary">La Fortaleza</span>
+                    <h2 class="mt-3 font-display text-5xl sm:text-6xl text-white leading-none">INSTALACIONES DE <span class="text-primary">ALTO RENDIMIENTO</span></h2>
+                    <p class="mt-4 text-muted">Espacios de entrenamiento de nivel industrial, diseñados para rendimiento, escala e intensidad.</p>
+                </div>
+                <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[220px] lg:auto-rows-[280px]">
+                    <figure class="reveal reveal-delay-1 group relative overflow-hidden rounded-2xl border border-surface lg:col-span-2 lg:row-span-2">
+                        <img src="./img/sala-pesas.jpg" alt="Sala de Pesas" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>
+                        <figcaption class="absolute bottom-5 left-5 flex items-center gap-2.5"><span class="h-px w-7 bg-primary transition-all duration-500 group-hover:w-10"></span><span class="font-heading text-lg uppercase tracking-widest text-white">Sala de Pesas</span></figcaption>
+                    </figure>
+                    <figure class="reveal reveal-delay-2 group relative overflow-hidden rounded-2xl border border-surface">
+                        <img src="./img/maquinas-gym.jpg" alt="Máquinas" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>
+                        <figcaption class="absolute bottom-5 left-5 flex items-center gap-2.5"><span class="h-px w-7 bg-primary transition-all duration-500 group-hover:w-10"></span><span class="font-heading text-lg uppercase tracking-widest text-white">Máquinas</span></figcaption>
+                    </figure>
+                    <figure class="reveal reveal-delay-3 group relative overflow-hidden rounded-2xl border border-surface lg:row-span-2">
+                        <img src="./img/zona-cardio.jpg" alt="Zona Cardio" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>
+                        <figcaption class="absolute bottom-5 left-5 flex items-center gap-2.5"><span class="h-px w-7 bg-primary transition-all duration-500 group-hover:w-10"></span><span class="font-heading text-lg uppercase tracking-widest text-white">Zona Cardio</span></figcaption>
+                    </figure>
+                    <figure class="reveal reveal-delay-4 group relative overflow-hidden rounded-2xl border border-surface">
+                        <img src="./img/zona-funcional.jpg" alt="Zona Funcional" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>
+                        <figcaption class="absolute bottom-5 left-5 flex items-center gap-2.5"><span class="h-px w-7 bg-primary transition-all duration-500 group-hover:w-10"></span><span class="font-heading text-lg uppercase tracking-widest text-white">Zona Funcional</span></figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section id="about" class="relative py-28 px-5 sm:px-8 border-t border-surface overflow-hidden">
+            <div class="mx-auto max-w-7xl grid lg:grid-cols-2 gap-14 items-center">
+                <div class="reveal relative order-2 lg:order-1">
+                    <div class="absolute -inset-3 border border-primary/20 rounded-2xl"></div>
+                    <div class="relative overflow-hidden rounded-2xl border border-surface">
+                        <img src="./img/atleta-entrenando.jpg" alt="Atleta entrenando" loading="lazy" class="w-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-dark/70 to-transparent"></div>
+                    </div>
+                    <div class="absolute -bottom-6 -right-2 sm:right-6 flex items-center gap-4 bg-dark border border-primary/40 px-6 py-4 rounded-xl red-glow">
+                        <span class="font-display text-4xl text-primary">10+</span>
+                        <span class="font-heading text-xs uppercase tracking-widest text-white leading-tight">Años forjando<br>personas más fuertes</span>
+                    </div>
+                </div>
+                <div class="reveal reveal-delay-2 order-1 lg:order-2">
+                    <span class="font-heading text-xs uppercase tracking-[0.4em] text-primary">El Estándar</span>
+                    <h2 class="mt-3 font-display text-5xl sm:text-6xl text-white leading-none">MÁS QUE UN GIMNASIO.<br>UN <span class="text-primary">ESTÁNDAR.</span></h2>
+                    <p class="mt-5 text-muted leading-relaxed text-lg">BULLTY GYM nació de una convicción: la fuerza se gana, no se regala. Como el Bull Terrier que corona nuestro emblema — enfocado, valiente, incansable — entrenamos con propósito. Cada detalle está pensado para forjar disciplina y entregar resultados que duran.</p>
+                    <ul class="mt-8 grid sm:grid-cols-2 gap-4">
+                        <li class="flex items-start gap-3"><span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="text-muted leading-relaxed">Coaches con experiencia competitiva</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="text-muted leading-relaxed">Equipamiento de competición calibrado</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="text-muted leading-relaxed">Programas diseñados sobre tu cuerpo</span></li>
+                        <li class="flex items-start gap-3"><span class="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-primary"><svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><path d="M20 6 9 17l-5-5"></path></svg></span><span class="text-muted leading-relaxed">Atmósfera de entrenamiento enfocada</span></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIÓN ANTES/DESPUÉS ELIMINADA -->
+
+        <!-- STATS -->
+        <section class="relative py-24 px-5 sm:px-8 border-t border-surface overflow-hidden">
+            <div class="absolute inset-0 grid-lines opacity-30"></div>
+            <div class="mx-auto max-w-7xl grid grid-cols-2 lg:grid-cols-4 gap-px bg-surface rounded-xl overflow-hidden">
+                <div class="reveal reveal-delay-1 relative bg-dark p-8 sm:p-12 text-center">
+                    <div class="font-display text-6xl sm:text-8xl text-stroke leading-none"><span>500+</span></div>
+                    <p class="mt-3 font-heading text-sm uppercase tracking-[0.3em] text-muted">Socios</p>
+                </div>
+                <div class="reveal reveal-delay-2 relative bg-dark p-8 sm:p-12 text-center">
+                    <div class="font-display text-6xl sm:text-8xl text-stroke leading-none"><span>10+</span></div>
+                    <p class="mt-3 font-heading text-sm uppercase tracking-[0.3em] text-muted">Años</p>
+                </div>
+                <div class="reveal reveal-delay-3 relative bg-dark p-8 sm:p-12 text-center">
+                    <div class="font-display text-6xl sm:text-8xl text-stroke leading-none"><span>95%</span></div>
+                    <p class="mt-3 font-heading text-sm uppercase tracking-[0.3em] text-muted">Retención</p>
+                </div>
+                <div class="reveal reveal-delay-4 relative bg-dark p-8 sm:p-12 text-center">
+                    <div class="font-display text-6xl sm:text-8xl text-stroke leading-none"><span>365</span></div>
+                    <p class="mt-3 font-heading text-sm uppercase tracking-[0.3em] text-muted">Días abierto</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIALS -->
+        <section class="relative py-28 px-5 sm:px-8 border-t border-surface overflow-hidden">
+            <div class="absolute right-0 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]"></div>
+            <div class="mx-auto max-w-5xl text-center">
+                <div class="reveal">
+                    <span class="font-heading text-xs uppercase tracking-[0.4em] text-primary">La Prueba</span>
+                    <h2 class="mt-3 font-display text-5xl sm:text-6xl text-white leading-none">LO QUE DICEN NUESTROS <span class="text-primary">SOCIOS</span></h2>
+                </div>
+                <div class="reveal reveal-delay-2 relative mt-14">
+                    <div class="relative rounded-3xl border border-surface bg-surface overflow-hidden">
+                        <div class="grid md:grid-cols-5 items-center">
+                            <div class="relative md:col-span-2 h-64 md:h-full min-h-[280px] overflow-hidden" id="testimonial-images">
+                                <img src="./img/testimonio-marco.jpg" alt="Marco D." loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-all duration-700 opacity-0 scale-105 testimonial-img">
+                                <img src="./img/testimonio-sofia.jpg" alt="Sofía R." loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-all duration-700 opacity-0 scale-105 testimonial-img">
+                                <img src="./img/testimonio-david.jpg" alt="David K." loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-all duration-700 opacity-0 scale-105 testimonial-img">
+                                <img src="./img/testimonio-elena.jpg" alt="Elena M." loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-all duration-700 opacity-100 scale-100 testimonial-img active">
+                                <div class="absolute inset-0 bg-gradient-to-r from-transparent via-transparent to-surface md:bg-gradient-to-r md:from-transparent md:to-surface"></div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-surface/60 to-transparent md:hidden"></div>
+                            </div>
+                            <div class="md:col-span-3 p-8 sm:p-12 text-left">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path><path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z"></path></svg>
+                                <div class="mt-3 flex gap-1 text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"></path></svg>
+                                </div>
+                                <blockquote id="testimonial-text" class="mt-5 text-xl sm:text-2xl font-heading text-white leading-relaxed">"Programación personalizada que funciona. Mi peso muerto pasó de 80 a 160 kg. Los coaches saben exactamente lo que hacen."</blockquote>
+                                <div class="mt-7">
+                                    <p id="testimonial-name" class="font-heading text-lg uppercase tracking-widest text-white">Elena M.</p>
+                                    <p id="testimonial-role" class="text-sm text-muted">Socio · 18 meses</p>
+                                </div>
+                                <div class="mt-8 flex gap-3">
+                                    <button id="prev-test" aria-label="Anterior" class="flex h-11 w-11 items-center justify-center rounded-full border border-surface text-muted hover:border-primary hover:text-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"></path></svg></button>
+                                    <button id="next-test" aria-label="Siguiente" class="flex h-11 w-11 items-center justify-center rounded-full border border-surface text-muted hover:border-primary hover:text-primary transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-6 flex justify-center gap-2" id="testimonial-dots">
+                        <button class="h-1.5 rounded-full transition-all duration-300 w-4 bg-surface hover:bg-primary/50" data-index="0"></button>
+                        <button class="h-1.5 rounded-full transition-all duration-300 w-4 bg-surface hover:bg-primary/50" data-index="1"></button>
+                        <button class="h-1.5 rounded-full transition-all duration-300 w-4 bg-surface hover:bg-primary/50" data-index="2"></button>
+                        <button class="h-1.5 rounded-full transition-all duration-300 w-8 bg-primary" data-index="3"></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="relative py-28 px-5 sm:px-8 border-t border-surface">
+            <div class="mx-auto max-w-4xl">
+                <div class="reveal text-center">
+                    <span class="font-heading text-xs uppercase tracking-[0.4em] text-primary">Respuestas</span>
+                    <h2 class="mt-3 font-display text-5xl sm:text-6xl text-white leading-none">PREGUNTAS <span class="text-primary">FRECUENTES</span></h2>
+                </div>
+                <div class="mt-14 flex flex-col gap-3">
+                    <!-- FAQ Item 1 -->
+                    <div class="faq-item border rounded-2xl overflow-hidden transition-colors duration-300 border-surface bg-surface">
+                        <button class="faq-btn flex w-full items-center justify-between gap-4 p-6 text-left">
+                            <span class="font-heading text-lg uppercase tracking-wide text-white">¿Necesito experiencia previa para apuntarme?</span>
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 border-primary/40 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span>
+                        </button>
+                        <div class="faq-content grid transition-[grid-template-rows] duration-500 ease-out grid-rows-[0fr]">
+                            <div class="overflow-hidden"><p class="px-6 pb-7 text-muted leading-relaxed">Para nada. Recibimos a principiantes y atletas avanzados. Cada socio nuevo empieza con una valoración completa y un programa ajustado a su nivel.</p></div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 2 -->
+                    <div class="faq-item border rounded-2xl overflow-hidden transition-colors duration-300 border-surface bg-surface">
+                        <button class="faq-btn flex w-full items-center justify-between gap-4 p-6 text-left">
+                            <span class="font-heading text-lg uppercase tracking-wide text-white">¿Qué incluye la cuota de socio?</span>
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 border-primary/40 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span>
+                        </button>
+                        <div class="faq-content grid transition-[grid-template-rows] duration-500 ease-out grid-rows-[0fr]">
+                            <div class="overflow-hidden"><p class="px-6 pb-7 text-muted leading-relaxed">Acceso completo a todas las instalaciones y tu programa de entrenamiento personalizado y revisiones periódicas con el coach.</p></div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 3 -->
+                    <div class="faq-item border rounded-2xl overflow-hidden transition-colors duration-300 border-surface bg-surface">
+                        <button class="faq-btn flex w-full items-center justify-between gap-4 p-6 text-left">
+                            <span class="font-heading text-lg uppercase tracking-wide text-white">¿Puedo congelar o cancelar mi membresía?</span>
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 border-primary/40 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span>
+                        </button>
+                        <div class="faq-content grid transition-[grid-template-rows] duration-500 ease-out grid-rows-[0fr]">
+                            <div class="overflow-hidden"><p class="px-6 pb-7 text-muted leading-relaxed">Sí. Las membresías se pueden congelar hasta 3 meses al año. La cancelación es sencilla, con 30 días de aviso y sin cláusulas ocultas.</p></div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 4 -->
+                    <div class="faq-item border rounded-2xl overflow-hidden transition-colors duration-300 border-surface bg-surface">
+                        <button class="faq-btn flex w-full items-center justify-between gap-4 p-6 text-left">
+                            <span class="font-heading text-lg uppercase tracking-wide text-white">¿Ofrecéis entrenamiento personal?</span>
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 border-primary/40 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span>
+                        </button>
+                        <div class="faq-content grid transition-[grid-template-rows] duration-500 ease-out grid-rows-[0fr]">
+                            <div class="overflow-hidden"><p class="px-6 pb-7 text-muted leading-relaxed">Por supuesto. Nuestros coaches certificados imparten sesiones uno a uno y en grupos reducidos, ajustados a tu objetivo.</p></div>
+                        </div>
+                    </div>
+                    <!-- FAQ Item 5 -->
+                    <div class="faq-item border rounded-2xl overflow-hidden transition-colors duration-300 border-surface bg-surface">
+                        <button class="faq-btn flex w-full items-center justify-between gap-4 p-6 text-left">
+                            <span class="font-heading text-lg uppercase tracking-wide text-white">¿Cuál es vuestro horario?</span>
+                            <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 border-primary/40 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span>
+                        </button>
+                        <div class="faq-content grid transition-[grid-template-rows] duration-500 ease-out grid-rows-[0fr]">
+                            <div class="overflow-hidden"><p class="px-6 pb-7 text-muted leading-relaxed">Abrimos 6 días a la semana, Lun a Vie 10.30 a 14.00, tardes de 16.30 a 22.00 y Sáb de 12.00 a 14.00</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- MANIFIESTO / MOTIVACIÓN -->
+<section class="relative py-28 px-5 sm:px-8 border-t border-surface overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/5 via-dark to-dark"></div>
+    <div class="absolute -left-32 top-1/3 h-96 w-96 rounded-full bg-primary/10 blur-[120px]"></div>
+    
+    <div class="relative mx-auto max-w-5xl text-center">
+        <div class="reveal">
+            <span class="font-heading text-xs uppercase tracking-[0.4em] text-primary">El Manifiesto</span>
+            <h2 class="mt-3 font-display text-5xl sm:text-6xl lg:text-7xl text-white leading-tight">
+                LA FUERZA <span class="text-primary">NO SE REGALA.</span><br>
+                SE <span class="text-primary">CONQUISTA.</span>
+            </h2>
+        </div>
+        
+        <div class="mt-16 grid md:grid-cols-3 gap-8">
+            <div class="reveal reveal-delay-1">
+                <div class="font-display text-6xl text-primary mb-4">01</div>
+                <h3 class="font-heading text-xl uppercase tracking-wider text-white mb-3">Disciplina</h3>
+                <p class="text-muted leading-relaxed">Cada repetición es una decisión. Cada día es una oportunidad. No hay atajos, solo compromiso.</p>
+            </div>
+            
+            <div class="reveal reveal-delay-2">
+                <div class="font-display text-6xl text-primary mb-4">02</div>
+                <h3 class="font-heading text-xl uppercase tracking-wider text-white mb-3">Consistencia</h3>
+                <p class="text-muted leading-relaxed">Los resultados no vienen de un día épico, sino de cientos de días ordinarios donde no te rindes.</p>
+            </div>
+            
+            <div class="reveal reveal-delay-3">
+                <div class="font-display text-6xl text-primary mb-4">03</div>
+                <h3 class="font-heading text-xl uppercase tracking-wider text-white mb-3">Transformación</h3>
+                <p class="text-muted leading-relaxed">No solo cambias tu físico. Cambias tu mentalidad. Te conviertes en alguien que no se conforma.</p>
+            </div>
+        </div>
+        
+        <div class="mt-16 reveal reveal-delay-4">
+            <blockquote class="font-heading text-2xl sm:text-3xl text-white italic leading-relaxed max-w-3xl mx-auto">
+                "El dolor que sientes hoy será la fuerza que tendrás mañana."
+            </blockquote>
+            <div class="mt-6 flex justify-center">
+                <a href="#contact" class="inline-flex items-center justify-center px-10 py-5 bg-primary text-white font-heading text-base uppercase tracking-widest hover:bg-white hover:text-primary transition-all duration-300 red-glow rounded-md">
+                    Empieza tu transformación
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- CTA FINAL -->
+        <section class="relative overflow-hidden bg-primary">
+            <div class="absolute inset-0 grid-lines opacity-[0.12]"></div>
+            <div class="absolute -left-20 -top-20 h-80 w-80 rounded-full bg-white/10 blur-[100px]"></div>
+            <div class="absolute -right-24 bottom-0 h-72 w-72 rounded-full bg-black/20 blur-[90px]"></div>
+            <div class="relative mx-auto max-w-5xl px-5 sm:px-8 py-28 text-center reveal">
+                <span class="font-heading text-xs uppercase tracking-[0.4em] text-white/80">Tu movimiento</span>
+                <h2 class="mt-5 font-display text-5xl sm:text-7xl lg:text-8xl text-white leading-[0.9]">¿Listo para convertirte<br>en tu versión más <span class="text-dark">fuerte?</span></h2>
+                <p class="mt-6 mx-auto max-w-xl text-white/90 text-lg">Lo único que te separa de tu yo más fuerte es la decisión de empezar. Tómala hoy.</p>
+                <div class="mt-10 flex flex-wrap justify-center gap-4">
+                    <a href="#contact" class="inline-flex items-center justify-center px-10 py-5 bg-dark text-white font-heading text-base uppercase tracking-widest hover:bg-white hover:text-primary transition-all duration-300 rounded-md">Únete ahora</a>
+                    <a href="https://wa.me/34600123456?text=Hola%20BULLTY%20GYM%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20membres%C3%ADas." target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 px-10 py-5 bg-white text-primary font-heading text-base uppercase tracking-widest hover:bg-dark hover:text-white transition-all duration-300 rounded-md shadow-2xl">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg> Consulta por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section id="contact" class="relative py-28 px-5 sm:px-8 border-t border-surface">
+            <div class="mx-auto max-w-7xl">
+                <div class="reveal max-w-2xl">
+                    <span class="font-heading text-xs uppercase tracking-[0.4em] text-primary">Empieza</span>
+                    <h2 class="mt-3 font-display text-5xl sm:text-6xl text-white leading-none">ENTRA EN <span class="text-primary">LA FORTALEZA</span></h2>
+                    <p class="mt-4 text-muted text-lg">Escríbenos o reserva una visita. Respondemos rápido.</p>
+                </div>
+                <div class="mt-14 grid lg:grid-cols-2 gap-10">
+                    <div class="reveal grid sm:grid-cols-2 gap-4">
+                        <div class="bg-dark border border-surface rounded-2xl p-8 group hover:border-primary/50 hover:bg-surface transition-all duration-500">
+                            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg></span>
+                            <p class="mt-4 font-heading text-xs uppercase tracking-[0.3em] text-muted">Dirección</p>
+                            <p class="mt-2 text-white leading-relaxed">Calle Guadalquivir, Polígono Fuente Granada, 23680 Alcalá la Real, Jaén</p>
+                        </div>
+                        <div class="bg-dark border border-surface rounded-2xl p-8 group hover:border-primary/50 hover:bg-surface transition-all duration-500">
+                            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></span>
+                            <p class="mt-4 font-heading text-xs uppercase tracking-[0.3em] text-muted">Email</p>
+                            <p class="mt-2 text-white leading-relaxed">bulltygym@hotmail.com</p>
+                        </div>
+                        <div class="bg-dark border border-surface rounded-2xl p-8 group hover:border-primary/50 hover:bg-surface transition-all duration-500">
+                            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></span>
+                            <p class="mt-4 font-heading text-xs uppercase tracking-[0.3em] text-muted">Web</p>
+                            <p class="mt-2 text-white leading-relaxed">bullty-gym.es</p>
+                        </div>
+                        <div class="bg-dark border border-surface rounded-2xl p-8 group hover:border-primary/50 hover:bg-surface transition-all duration-500">
+                            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
+                            <p class="mt-4 font-heading text-xs uppercase tracking-[0.3em] text-muted">Horario</p>
+                            <p class="mt-2 text-white leading-relaxed">Lun – Vie · 10:00 – 14:00<br>Lun – Vie · 16:30 – 22:00<br>Sab · 12:00 – 14:00</p>
+                        </div>
+                        <a href="https://wa.me/34600123456?text=Hola%20BULLTY%20GYM%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20membres%C3%ADas." target="_blank" rel="noopener noreferrer" class="sm:col-span-2 flex items-center justify-center gap-3 w-full px-6 py-6 bg-primary text-white font-heading text-base uppercase tracking-widest hover:bg-white hover:text-primary transition-all duration-300 red-glow-strong rounded-2xl">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg> Escríbenos por WhatsApp
+                        </a>
+                    </div>
+                    <div class="reveal reveal-delay-2 rounded-2xl overflow-hidden border border-surface min-h-[400px] bg-surface">
+                        <iframe title="Ubicación de BULLTY GYM" src="https://maps.google.com/maps?q=Alcalá+la+Real,+Jaén,+España&z=15&output=embed" class="h-full min-h-[400px] w-full map-dark" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative border-t border-surface bg-dark px-5 sm:px-8 pt-20 pb-8 overflow-hidden">
+        <div class="absolute -top-32 left-1/2 -translate-x-1/2 h-64 w-[600px] rounded-full bg-primary/10 blur-[120px]"></div>
+        <div class="relative mx-auto max-w-7xl">
+            <div class="grid gap-12 lg:grid-cols-4">
+                <div class="lg:col-span-2">
+                    <div class="flex items-center">
+                        <img src="./img/logo-bullty-gym.png" alt="Logo de BULLTY GYM" class="h-24 sm:h-28 w-auto object-contain">
+                    </div>
+                    <p class="mt-6 max-w-md text-muted leading-relaxed">Construye fuerza. Forja disciplina. Un club de fuerza y rendimiento pensado para quienes no se conforman con lo ordinario.</p>
+                    <div class="mt-7 flex gap-3">
+                        <a href="#" aria-label="Instagram" class="flex h-11 w-11 items-center justify-center rounded-xl border border-surface text-muted hover:border-primary hover:text-primary hover:-translate-y-0.5 transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+                        <a href="#" aria-label="Facebook" class="flex h-11 w-11 items-center justify-center rounded-xl border border-surface text-muted hover:border-primary hover:text-primary hover:-translate-y-0.5 transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-heading text-xs uppercase tracking-[0.3em] text-white">Navegación</h3>
+                    <ul class="mt-5 flex flex-col gap-3">
+                        <li><a href="#home" class="text-muted hover:text-primary transition-colors">Inicio</a></li>
+                        <li><a href="#services" class="text-muted hover:text-primary transition-colors">Disciplinas</a></li>
+                        <li><a href="#facilities" class="text-muted hover:text-primary transition-colors">Instalaciones</a></li>
+                        <li><a href="#about" class="text-muted hover:text-primary transition-colors">Nosotros</a></li>
+                        <li><a href="#contact" class="text-muted hover:text-primary transition-colors">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-heading text-xs uppercase tracking-[0.3em] text-white">Legal</h3>
+                    <ul class="mt-5 flex flex-col gap-3">
+                        <li><a href="politica-privacidad.html" class="text-muted hover:text-primary transition-colors">Política de Privacidad</a></li>
+                        <li><a href="politica-cookies.html" class="text-muted hover:text-primary transition-colors">Política de Cookies</a></li>
+                        <li><a href="aviso-legal.html" class="text-muted hover:text-primary transition-colors">Aviso Legal</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="mt-16 pt-6 border-t border-surface flex flex-col sm:flex-row items-center justify-between gap-3">
+                <p class="text-sm text-muted">© 2026 BULLTY GYM. Todos los derechos reservados.</p>
+                <p class="text-xs uppercase tracking-[0.3em] text-muted">Construye fuerza · Forja disciplina</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÓN WHATSAPP FLOTANTE -->
+    <a href="https://wa.me/34600123456?text=Hola%20BULLTY%20GYM%2C%20me%20gustar%C3%ADa%20recibir%20informaci%C3%B3n%20sobre%20las%20membres%C3%ADas." target="_blank" rel="noopener noreferrer" aria-label="Contáctanos por WhatsApp" class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-primary text-white red-glow hover:scale-110 transition-transform duration-300 animate-pulse-glow">
+        <span class="absolute inset-0 rounded-full border border-primary animate-[ping_1.5s_infinite]"></span>
+        <svg viewBox="0 0 24 24" class="relative h-7 w-7 fill-current" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"></path></svg>
+    </a>
+
+</div> <!-- End #root -->
+
+<!-- ============================================ -->
+<!-- BANNER DE COOKIES -->
+<!-- ============================================ -->
+<div id="cookie-banner" class="fixed bottom-0 left-0 right-0 z-[9999] transform translate-y-full transition-transform duration-500 ease-out">
+    <div class="bg-surface border-t-2 border-primary shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-5 sm:py-6">
+            <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-6">
+                <div class="flex-1">
+                    <div class="flex items-start gap-3">
+                        <div class="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center shrink-0 mt-0.5">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+                                <circle cx="12" cy="12" r="10"/>
+                                <circle cx="8" cy="10" r="1.5" fill="currentColor"/>
+                                <circle cx="15" cy="9" r="1.5" fill="currentColor"/>
+                                <circle cx="10" cy="15" r="1.5" fill="currentColor"/>
+                                <circle cx="16" cy="14" r="1.5" fill="currentColor"/>
+                                <circle cx="12" cy="7" r="1.5" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="font-heading font-bold text-white text-base sm:text-lg mb-1">Utilizamos cookies</h3>
+                            <p class="text-sm text-muted font-body leading-relaxed">
+                                Usamos cookies para mejorar tu experiencia y analizar el tráfico. Puedes 
+                                <button id="cookie-banner-accept-inline" class="text-primary hover:text-white underline font-semibold">aceptar todas</button>, 
+                                <button id="cookie-banner-reject-inline" class="text-primary hover:text-white underline font-semibold">rechazar las no necesarias</button> o 
+                                <button id="cookie-banner-settings-inline" class="text-primary hover:text-white underline font-semibold">configurar</button>.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-2 lg:gap-3 lg:shrink-0">
+                    <button id="cookie-reject" class="px-5 py-2.5 text-sm font-heading font-semibold text-muted hover:text-white border border-surface hover:border-primary rounded-lg transition-colors">
+                        Solo las necesarias
+                    </button>
+                    <button id="cookie-settings" class="px-5 py-2.5 text-sm font-heading font-semibold text-muted hover:text-white border border-surface hover:border-primary rounded-lg transition-colors">
+                        Configurar
+                    </button>
+                    <button id="cookie-accept" class="px-5 py-2.5 text-sm font-heading font-bold text-white bg-primary hover:bg-white hover:text-primary rounded-lg shadow-md hover:shadow-lg transition-all">
+                        Aceptar todas
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- PANEL DE CONFIGURACIÓN DE COOKIES (Modal) -->
+<div id="cookie-modal" class="fixed inset-0 z-[10000] hidden">
+    <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="cookie-modal-backdrop"></div>
+    <div class="absolute inset-0 flex items-center justify-center p-4">
+        <div class="bg-surface border border-primary/30 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+            <div class="sticky top-0 bg-surface border-b border-surface p-6 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary">
+                        <circle cx="12" cy="12" r="10"/>
+                        <circle cx="8" cy="10" r="1.5" fill="currentColor"/>
+                        <circle cx="15" cy="9" r="1.5" fill="currentColor"/>
+                        <circle cx="10" cy="15" r="1.5" fill="currentColor"/>
+                        <circle cx="16" cy="14" r="1.5" fill="currentColor"/>
+                    </svg>
+                    <h3 class="font-heading text-2xl text-white">Configuración de Cookies</h3>
+                </div>
+                <button id="cookie-modal-close" class="text-muted hover:text-white transition-colors">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M18 6 6 18"/><path d="m6 6 12 12"/>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="p-6 space-y-6">
+                <!-- Cookies Necesarias -->
+                <div class="bg-dark/50 border border-surface rounded-xl p-5">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <div class="flex items-center gap-2 mb-2">
+                                <h4 class="font-heading text-lg text-white">Cookies Necesarias</h4>
+                                <span class="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full font-semibold">Siempre activas</span>
+                            </div>
+                            <p class="text-sm text-muted">Esenciales para el funcionamiento básico del sitio web. Sin estas cookies, el sitio no funcionaría correctamente.</p>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-11 h-6 bg-primary rounded-full relative cursor-not-allowed">
+                                <div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cookies Analíticas -->
+                <div class="bg-dark/50 border border-surface rounded-xl p-5 hover:border-primary/30 transition-colors">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <h4 class="font-heading text-lg text-white mb-2">Cookies Analíticas</h4>
+                            <p class="text-sm text-muted">Nos permiten contar las visitas y las fuentes de tráfico para medir y mejorar el rendimiento de nuestro sitio (Google Analytics).</p>
+                        </div>
+                        <div class="flex items-center">
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="cookie-analytics-toggle" class="sr-only peer">
+                                <div class="w-11 h-6 bg-surface peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cookies de Marketing -->
+                <div class="bg-dark/50 border border-surface rounded-xl p-5 hover:border-primary/30 transition-colors">
+                    <div class="flex items-start justify-between gap-4">
+                        <div class="flex-1">
+                            <h4 class="font-heading text-lg text-white mb-2">Cookies de Marketing</h4>
+                            <p class="text-sm text-muted">Se utilizan para rastrear a los visitantes y mostrar anuncios relevantes en redes sociales y otras plataformas.</p>
+                        </div>
+                        <div class="flex items-center">
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" id="cookie-marketing-toggle" class="sr-only peer">
+                                <div class="w-11 h-6 bg-surface peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sticky bottom-0 bg-surface border-t border-surface p-6 flex flex-col sm:flex-row gap-3">
+                <button id="cookie-save-preferences" class="flex-1 px-6 py-3 bg-primary hover:bg-white hover:text-primary text-white font-heading font-bold uppercase tracking-widest rounded-lg transition-all">
+                    Guardar preferencias
+                </button>
+                <button id="cookie-accept-all-modal" class="flex-1 px-6 py-3 border border-primary text-primary hover:bg-primary hover:text-white font-heading font-semibold uppercase tracking-widest rounded-lg transition-all">
+                    Aceptar todas
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+    // 1. HEADER SCROLL
+    const header = document.getElementById('main-header');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            header.classList.add('bg-dark/95', 'backdrop-blur-xl', 'shadow-lg');
+            header.classList.remove('bg-transparent', 'py-4');
+            header.classList.add('py-2');
+        } else {
+            header.classList.remove('bg-dark/95', 'backdrop-blur-xl', 'shadow-lg', 'py-2');
+            header.classList.add('bg-transparent', 'py-4');
+        }
+    });
+
+    // 2. MOBILE MENU
+    const menuBtn = document.getElementById('btn-menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            const isOpen = mobileMenu.style.maxHeight !== '0px' && mobileMenu.style.maxHeight !== '';
+            mobileMenu.style.maxHeight = isOpen ? '0px' : '500px';
+        });
+        mobileMenu.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', () => { mobileMenu.style.maxHeight = '0px'; });
+        });
+    }
+
+    // 3. SCROLL REVEAL ANIMATIONS
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // 4. FAQ ACCORDION
+    document.querySelectorAll('.faq-btn').forEach(button => {
+        button.addEventListener('click', () => {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('.faq-icon');
+            const isOpen = content.classList.contains('grid-rows-[1fr]');
+            
+            // Close all
+            document.querySelectorAll('.faq-content').forEach(c => {
+                c.classList.remove('grid-rows-[1fr]');
+                c.classList.add('grid-rows-[0fr]');
+            });
+            document.querySelectorAll('.faq-icon').forEach(i => i.style.transform = 'rotate(0deg)');
+            
+            // Open current if it was closed
+            if (!isOpen) {
+                content.classList.remove('grid-rows-[0fr]');
+                content.classList.add('grid-rows-[1fr]');
+                icon.style.transform = 'rotate(45deg)';
+            }
+        });
+    });
+
+    // 5. TESTIMONIAL SLIDER
+    const testimonials = [
+        { name: "Elena M.", role: "Socio · 18 meses", text: "Programación personalizada que funciona. Mi peso muerto pasó de 80 a 160 kg. Los coaches saben exactamente lo que hacen." },
+        { name: "Marco D.", role: "Socio · 2 años", text: "BULLTY GYM lo cambió todo. El coaching es de élite y el material, de primer nivel. A los 38 soy más fuerte que nunca." },
+        { name: "Sofía R.", role: "Socio · 8 meses", text: "El ambiente te empuja a dar lo mejor. He perdido 12kg y ganado una fuerza que no sabía que tenía. Totalmente recomendable." },
+        { name: "David K.", role: "Socio · 1 año", text: "Por fin un gimnasio que no es una fábrica. Aquí te conocen por tu nombre y tu progreso es su prioridad." }
+    ];
+    let currentTest = 3;
+    
+    function updateTestimonial(index) {
+        const imgs = document.querySelectorAll('.testimonial-img');
+        const dots = document.querySelectorAll('#testimonial-dots button');
+        const t = testimonials[index];
+        
+        imgs.forEach((img, i) => {
+            if (i === index) {
+                img.classList.remove('opacity-0', 'scale-105');
+                img.classList.add('opacity-100', 'scale-100', 'active');
+            } else {
+                img.classList.add('opacity-0', 'scale-105');
+                img.classList.remove('opacity-100', 'scale-100', 'active');
+            }
+        });
+        
+        dots.forEach((dot, i) => {
+            if (i === index) {
+                dot.classList.remove('w-4', 'bg-surface');
+                dot.classList.add('w-8', 'bg-primary');
+            } else {
+                dot.classList.add('w-4', 'bg-surface');
+                dot.classList.remove('w-8', 'bg-primary');
+            }
+        });
+        
+        document.getElementById('testimonial-text').style.opacity = 0;
+        setTimeout(() => {
+            document.getElementById('testimonial-text').textContent = `"${t.text}"`;
+            document.getElementById('testimonial-name').textContent = t.name;
+            document.getElementById('testimonial-role').textContent = t.role;
+            document.getElementById('testimonial-text').style.opacity = 1;
+        }, 300);
+        
+        currentTest = index;
+    }
+
+    document.getElementById('next-test').addEventListener('click', () => updateTestimonial((currentTest + 1) % testimonials.length));
+    document.getElementById('prev-test').addEventListener('click', () => updateTestimonial((currentTest - 1 + testimonials.length) % testimonials.length));
+    document.querySelectorAll('#testimonial-dots button').forEach(dot => {
+        dot.addEventListener('click', () => updateTestimonial(parseInt(dot.dataset.index)));
+    });
+    setInterval(() => updateTestimonial((currentTest + 1) % testimonials.length), 6000);
+
+    // 6. MENÚ ACTIVO - Resalta la sección actual
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-link');
+
+function updateActiveMenu() {
+    const scrollPos = window.scrollY + 300; // Aumentado a 300px para mejor detección
+    
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        
+        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+    
+    // Si estamos arriba del todo, activar "Inicio"
+    if (window.scrollY < 100) {
+        navLinks.forEach(link => link.classList.remove('active'));
+        const homeLink = document.querySelector('.nav-link[href="#home"]');
+        if (homeLink) homeLink.classList.add('active');
+    }
+}
+
+window.addEventListener('scroll', updateActiveMenu);
+updateActiveMenu(); // Llamar al cargar
+
+    // 7. COOKIE BANNER & MODAL LOGIC
+    const cookieBanner = document.getElementById('cookie-banner');
+    const cookieModal = document.getElementById('cookie-modal');
+    const cookieModalBackdrop = document.getElementById('cookie-modal-backdrop');
+
+    function showCookieBanner() {
+        if (!getCookie('cookie_consent')) {
+            setTimeout(() => {
+                cookieBanner.classList.remove('translate-y-full');
+                cookieBanner.classList.add('translate-y-0');
+            }, 1500);
+        }
+    }
+
+    function hideCookieBanner() {
+        cookieBanner.classList.remove('translate-y-0');
+        cookieBanner.classList.add('translate-y-full');
+    }
+
+    function openCookieModal() {
+        hideCookieBanner();
+        cookieModal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeCookieModal() {
+        cookieModal.classList.add('hidden');
+        document.body.style.overflow = '';
+    }
+
+    function saveCookiePreferences(analytics = false, marketing = false) {
+        const consent = {
+            necessary: true,
+            analytics: analytics,
+            marketing: marketing,
+            timestamp: new Date().toISOString()
+        };
+        setCookie('cookie_consent', JSON.stringify(consent), 365);
+        hideCookieBanner();
+        closeCookieModal();
+        console.log('✅ Cookies guardadas:', consent);
+    }
+
+    function setCookie(name, value, days) {
+        const expires = new Date();
+        expires.setTime(expires.getTime() + (days * 24 * 60 * 60 * 1000));
+        document.cookie = `${name}=${value};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+    }
+
+    function getCookie(name) {
+        const nameEQ = name + "=";
+        const ca = document.cookie.split(';');
+        for(let i=0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+            if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+        }
+        return null;
+    }
+
+    document.getElementById('cookie-accept')?.addEventListener('click', () => saveCookiePreferences(true, true));
+    document.getElementById('cookie-reject')?.addEventListener('click', () => saveCookiePreferences(false, false));
+    document.getElementById('cookie-settings')?.addEventListener('click', openCookieModal);
+
+    document.getElementById('cookie-banner-accept-inline')?.addEventListener('click', () => saveCookiePreferences(true, true));
+    document.getElementById('cookie-banner-reject-inline')?.addEventListener('click', () => saveCookiePreferences(false, false));
+    document.getElementById('cookie-banner-settings-inline')?.addEventListener('click', openCookieModal);
+
+    document.getElementById('cookie-modal-close')?.addEventListener('click', closeCookieModal);
+    cookieModalBackdrop?.addEventListener('click', closeCookieModal);
+
+    document.getElementById('cookie-save-preferences')?.addEventListener('click', () => {
+        const analytics = document.getElementById('cookie-analytics-toggle')?.checked || false;
+        const marketing = document.getElementById('cookie-marketing-toggle')?.checked || false;
+        saveCookiePreferences(analytics, marketing);
+    });
+
+    document.getElementById('cookie-accept-all-modal')?.addEventListener('click', () => saveCookiePreferences(true, true));
+
+    showCookieBanner();
+</script>
+
+</body>
+</html>
