@@ -427,7 +427,7 @@
             </div>
         </section>
 
-        <!-- TESTIMONIALS -->
+        <!-- TESTIMONIALS
         <section class="relative py-28 px-5 sm:px-8 border-t border-surface overflow-hidden">
             <div class="absolute right-0 top-0 h-72 w-72 rounded-full bg-primary/10 blur-[100px]"></div>
             <div class="mx-auto max-w-5xl text-center">
@@ -475,7 +475,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
             <!-- FAQ -->
             <section id="faq" class="relative py-28 px-5 sm:px-8 border-t border-surface">
@@ -875,7 +875,7 @@
         }
     });
 
-    // 2. MOBILE MENU
+    // 2. MOBILE MENU (CORREGIDO)
     const menuBtn = document.getElementById('btn-menu');
     const mobileMenu = document.getElementById('mobile-menu');
     if (menuBtn && mobileMenu) {
@@ -883,8 +883,12 @@
             const isOpen = mobileMenu.style.maxHeight !== '0px' && mobileMenu.style.maxHeight !== '';
             mobileMenu.style.maxHeight = isOpen ? '0px' : '500px';
         });
-        mobileMenu.querySelectorAll('.menu-link').forEach(link => {
-            link.addEventListener('click', () => { mobileMenu.style.maxHeight = '0px'; });
+        
+        // CORRECCIÓN: Ahora escucha CUALQUIER etiqueta <a> dentro del menú móvil
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => { 
+                mobileMenu.style.maxHeight = '0px'; 
+            });
         });
     }
 
@@ -974,37 +978,36 @@
     setInterval(() => updateTestimonial((currentTest + 1) % testimonials.length), 6000);
 
     // 6. MENÚ ACTIVO - Resalta la sección actual
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-link');
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
 
-function updateActiveMenu() {
-    const scrollPos = window.scrollY + 300; // Aumentado a 300px para mejor detección
-    
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.offsetHeight;
-        const sectionId = section.getAttribute('id');
+    function updateActiveMenu() {
+        const scrollPos = window.scrollY + 300; 
         
-        if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${sectionId}`) {
-                    link.classList.add('active');
-                }
-            });
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            }
+        });
+        
+        if (window.scrollY < 100) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            const homeLink = document.querySelector('.nav-link[href="#home"]');
+            if (homeLink) homeLink.classList.add('active');
         }
-    });
-    
-    // Si estamos arriba del todo, activar "Inicio"
-    if (window.scrollY < 100) {
-        navLinks.forEach(link => link.classList.remove('active'));
-        const homeLink = document.querySelector('.nav-link[href="#home"]');
-        if (homeLink) homeLink.classList.add('active');
     }
-}
 
-window.addEventListener('scroll', updateActiveMenu);
-updateActiveMenu(); // Llamar al cargar
+    window.addEventListener('scroll', updateActiveMenu);
+    updateActiveMenu(); 
 
     // 7. COOKIE BANNER & MODAL LOGIC
     const cookieBanner = document.getElementById('cookie-banner');
