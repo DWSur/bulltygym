@@ -95,12 +95,22 @@
         .peer:checked ~ div { background-color: #E60000; }
 
         /* Menú activo - subrayado */
-        .nav-link.active {
-            color: white !important;
-        }
-        .nav-link.active::after {
-            width: 100% !important;
-        }
+            .nav-link {
+                position: relative;
+            }
+            .nav-link.active {
+                color: white !important;
+            }
+            .nav-link.active::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -6px;
+                height: 2px;
+                width: 100% !important;
+                background-color: #E60000;
+                transition: width 0.3s ease;
+            }
     </style>
 
        <!-- Schema.org JSON-LD (SEO Local Mejorado) -->
@@ -994,37 +1004,56 @@
     });
     setInterval(() => updateTestimonial((currentTest + 1) % testimonials.length), 6000);
 
-    // 6. MENÚ ACTIVO - Resalta la sección actual
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link');
+    // 6. MENÚ ACTIVO - Scroll Spy mejorado
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
 
-    function updateActiveMenu() {
-        const scrollPos = window.scrollY + 300; 
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            const sectionId = section.getAttribute('id');
+        function updateActiveMenu() {
+            const scrollPos = window.scrollY + 150; // Reducido para mejor detección
             
-            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+            let currentSection = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.offsetHeight;
+                const sectionId = section.getAttribute('id');
+                
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    currentSection = sectionId;
+                }
+            });
+            
+            // Remover active de todos
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                // Asegurar que el ::after tenga width 0 cuando no está activo
+                link.style.setProperty('--underline-width', '0%');
+            });
+            
+            // Añadir active al correspondiente
+            if (currentSection) {
                 navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') === `#${sectionId}`) {
+                    if (link.getAttribute('href') === `#${currentSection}`) {
                         link.classList.add('active');
+                        link.style.setProperty('--underline-width', '100%');
                     }
                 });
             }
-        });
-        
-        if (window.scrollY < 100) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            const homeLink = document.querySelector('.nav-link[href="#home"]');
-            if (homeLink) homeLink.classList.add('active');
+            
+            // Si estamos arriba del todo, activar Home
+            if (window.scrollY < 100) {
+                navLinks.forEach(link => link.classList.remove('active'));
+                const homeLink = document.querySelector('.nav-link[href="#home"]');
+                if (homeLink) {
+                    homeLink.classList.add('active');
+                    homeLink.style.setProperty('--underline-width', '100%');
+                }
+            }
         }
-    }
 
-    window.addEventListener('scroll', updateActiveMenu);
-    updateActiveMenu(); 
+        window.addEventListener('scroll', updateActiveMenu);
+        window.addEventListener('load', updateActiveMenu);
+        updateActiveMenu();
 
     // 7. COOKIE BANNER & MODAL LOGIC
     const cookieBanner = document.getElementById('cookie-banner');
