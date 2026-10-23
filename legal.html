@@ -13,43 +13,7 @@
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
     <link rel="manifest" href="./site.webmanifest" />
-    <style>
-        /* Scroll padding para compensar header fijo */
-        html {
-            scroll-padding-top: 140px;
-        }
-        
-        /* Sidebar activo */
-        .sidebar-link.active {
-            background-color: rgba(230, 0, 0, 0.1);
-            border-left-color: #E60000;
-            color: white;
-        }
-        
-        /* Responsive: en móvil el sidebar se convierte en tabs superiores */
-        @media (max-width: 768px) {
-            .legal-sidebar {
-                position: sticky;
-                top: 80px;
-                display: flex;
-                gap: 1rem;
-                overflow-x: auto;
-                padding-bottom: 1rem;
-                border-left: none !important;
-                border-bottom: 1px solid #151515;
-            }
-            .sidebar-link {
-                white-space: nowrap;
-                border-left: none !important;
-                border-bottom: 2px solid transparent !important;
-            }
-            .sidebar-link.active {
-                border-bottom-color: #E60000 !important;
-                background-color: transparent !important;
-            }
-        }
-    </style>
-</head>
+ </head>
 <body class="bg-dark text-white antialiased">
 
 <!-- HEADER -->
@@ -228,22 +192,31 @@
 </div>
 
 <!-- FOOTER -->
-<footer class="border-t border-surface bg-dark px-5 sm:px-8 py-16">
-    <div class="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-6">
-        <div class="text-center sm:text-left">
-            <p class="text-sm text-muted">© 2026 BULLTY GYM. Todos los derechos reservados.</p>
-        </div>
-        <div class="flex flex-wrap justify-center gap-6 text-sm">
-            <a href="#aviso-legal" class="text-muted hover:text-primary transition-colors">Aviso Legal</a>
-            <a href="#privacidad" class="text-muted hover:text-primary transition-colors">Privacidad</a>
-            <a href="#cookies" class="text-muted hover:text-primary transition-colors">Cookies</a>
-            <a href="index.html" class="inline-flex items-center gap-1 text-muted hover:text-primary transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 18-6-6 6-6"/></svg>
-                Volver a la web
-            </a>
-        </div>
+
+<!-- FOOTER -->
+<footer class="border-t border-surface bg-dark px-5 sm:px-8 py-10 mt-10">
+    <div class="mx-auto max-w-7xl flex justify-center items-center text-center">
+        <p class="text-sm text-muted leading-relaxed">
+            © 2026 BULLTY GYM. Todos los derechos reservados.
+        </p>
     </div>
 </footer>
+
+
+<!-- MENÚ LEGAL FLOTANTE PARA MÓVIL -->
+<details class="legal-float-menu">
+    <summary aria-label="Abrir navegación legal">
+        <span class="legal-menu-icon">☰</span>
+        <span class="legal-menu-label">SECCIONES</span>
+    </summary>
+
+    <nav aria-label="Secciones legales">
+        <a href="#aviso-legal">Aviso Legal</a>
+        <a href="#privacidad">Política de Privacidad</a>
+        <a href="#cookies">Política de Cookies</a>
+    </nav>
+</details>
+
 
 <!-- Script para marcar el sidebar activo -->
 <script>
@@ -273,6 +246,16 @@
     window.addEventListener('load', updateActiveSidebar);
     updateActiveSidebar();
 </script>
+
+
+<script>
+document.querySelectorAll('.legal-float-menu nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        document.querySelector('.legal-float-menu').open = false;
+    });
+});
+</script>
+
 
 </body>
 </html>
