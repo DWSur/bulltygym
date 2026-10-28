@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BULLTY GYM | Club de Fuerza y Rendimiento en Alcalá la Real</title>
-    <meta name="description" content="Gimnasio en Alcalá la Real. Coaching profesional, equipamiento de élite (Life Fitness, OSS) y programas personalizados. Construye fuerza, forja disciplina.">
+    <meta name="theme-color" content="#0d0d0d">
+    <title>Gimnasio en Alcalá la Real | BULLTY GYM · 45 €/mes</title>
+    <meta name="description" content="BULLTY GYM, gimnasio en Alcalá la Real por 45 €/mes. Todas las instalaciones y rutina personalizada inicial. L–V 9:00–22:00; sábados 12:00–14:00.">
      <!-- FAVICON - BULLTY GYM -->
     <link rel="icon" type="image/png" href="./favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -17,45 +18,98 @@
     <meta property="og:type" content="website">
     <meta property="og:locale" content="es_ES">
     <meta property="og:site_name" content="BULLTY GYM">
-    <meta property="og:title" content="BULLTY GYM | Club de Fuerza y Rendimiento">
-    <meta property="og:description" content="Entrenamiento de fuerza, culturismo y coaching personalizado en Alcalá la Real. Sin atajos, solo resultados.">
-    <meta property="og:image" content="./img/hero-gym-background.png">
+    <meta property="og:title" content="Gimnasio en Alcalá la Real | BULLTY GYM · 45 €/mes">
+    <meta property="og:description" content="Cuota mensual de 45 € con acceso a todas las instalaciones y rutina personalizada inicial. Lunes a viernes 9:00–22:00; sábados 12:00–14:00.">
+    <meta property="og:url" content="https://bulltygym.netlify.app/">
+    <meta property="og:image" content="https://bulltygym.netlify.app/img/hero-gym-background.png">
+    <meta property="og:image:alt" content="Interior de BULLTY GYM, gimnasio en Alcalá la Real">
     <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gimnasio en Alcalá la Real | BULLTY GYM">
+    <meta name="twitter:description" content="45 €/mes, todas las instalaciones y rutina personalizada inicial. Consulta nuestro horario.">
+    <meta name="twitter:image" content="https://bulltygym.netlify.app/img/hero-gym-background.png">
 
     <!-- CSS Local Optimizado (Tailwind + Estilos personalizados + Fuentes) -->
     <link rel="stylesheet" href="./styles.css">
 
     <!-- Schema.org JSON-LD (SEO Local) -->
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HealthClub",
-      "name": "BULLTY GYM",
-      "alternateName": "Club de Fuerza y Rendimiento BULLTY",
-      "description": "Gimnasio en Alcalá la Real especializado en entrenamiento de fuerza con equipamiento de élite.",
-      "url": "https://bulltygym.netlify.app/",
-      "email": "bulltygym@gmail.com",
-      "address": {
+{
+    "@context": "https://schema.org",
+    "@type": "HealthClub",
+    "@id": "https://bulltygym.netlify.app/#business",
+    "name": "BULLTY GYM",
+    "alternateName": "Club de Fuerza y Rendimiento BULLTY",
+    "description": "Gimnasio en Alcalá la Real (Jaén) con cuota mensual de 45 €, acceso a todas las instalaciones y rutina personalizada inicial.",
+    "url": "https://bulltygym.netlify.app/",
+    "logo": "https://bulltygym.netlify.app/img/logo-bullty-gym.png",
+    "image": "https://bulltygym.netlify.app/img/hero-gym-background.png",
+    "telephone": "+34600123456",
+    "email": "bulltygym@gmail.com",
+    "address": {
         "@type": "PostalAddress",
         "streetAddress": "Calle Guadalquivir, Polígono Fuente Granada",
         "addressLocality": "Alcalá la Real",
         "addressRegion": "Jaén",
         "postalCode": "23680",
         "addressCountry": "ES"
-      },
-      "geo": {
+    },
+    "geo": {
         "@type": "GeoCoordinates",
         "latitude": 37.4611,
         "longitude": -3.9225
-      },
-      "openingHoursSpecification": [
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"], "opens": "09:00", "closes": "22:00" },
-        { "@type": "OpeningHoursSpecification", "dayOfWeek": "Saturday", "opens": "12:00", "closes": "14:00" }
-      ],
-      "priceRange": "€€",
-      "image": "https://bulltygym.netlify.app/img/hero-gym-background.png",
-      "sameAs": [ "https://www.instagram.com/bulltygym/", "https://www.facebook.com/Bulltygym" ]
+    },
+    "hasMap": "https://www.google.com/maps/search/?api=1&query=Calle%20Guadalquivir%2C%20Pol%C3%ADgono%20Fuente%20Granada%2C%2023680%20Alcal%C3%A1%20la%20Real%2C%20Ja%C3%A9n",
+    "openingHoursSpecification": [
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday"
+            ],
+            "opens": "09:00",
+            "closes": "22:00"
+        },
+        {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "12:00",
+            "closes": "14:00"
+        }
+    ],
+    "makesOffer": {
+        "@type": "Offer",
+        "name": "Cuota mensual BULLTY GYM",
+        "url": "https://bulltygym.netlify.app/#contacto",
+        "description": "Cuota mensual de 45 € con acceso a todas las instalaciones y rutina personalizada inicial.",
+        "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "45",
+            "priceCurrency": "EUR",
+            "unitText": "month"
+        }
+    },
+    "sameAs": [
+        "https://www.instagram.com/bulltygym/",
+        "https://www.facebook.com/Bulltygym"
+    ]
+}
+    </script>
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://bulltygym.netlify.app/#website",
+    "url": "https://bulltygym.netlify.app/",
+    "name": "BULLTY GYM",
+    "alternateName": "Club de Fuerza y Rendimiento BULLTY",
+    "inLanguage": "es-ES",
+    "publisher": {
+        "@id": "https://bulltygym.netlify.app/#business"
     }
+}
     </script>
 </head>
 <body class="bg-dark text-white antialiased">
@@ -124,10 +178,28 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"></path></svg> WhatsApp
                         </a>
                     </div>
-                    <div class="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 animate-fade-up" style="animation-delay: 0.45s;">
-                        <div class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span><span class="font-heading text-sm uppercase tracking-[0.25em] text-white/90">Fuerza</span></div>
-                        <div class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span><span class="font-heading text-sm uppercase tracking-[0.25em] text-white/90">Enfoque</span></div>
-                        <div class="flex items-center gap-3"><span class="h-1.5 w-1.5 rounded-full bg-primary"></span><span class="font-heading text-sm uppercase tracking-[0.25em] text-white/90">Disciplina</span></div>
+                    <!-- INFORMACIÓN PRÁCTICA: horario y cuota visibles desde la portada -->
+                    <div class="hero-info-grid animate-fade-up" style="animation-delay: 0.45s;">
+                        <div class="hero-info-card">
+                            <span class="hero-info-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+                            </span>
+                            <div class="hero-info-content">
+                                <p class="hero-info-label">Horario de apertura</p>
+                                <p class="hero-info-title">Lun–Vie · 09:00–22:00</p>
+                                <p class="hero-info-note">Sáb · 12:00–14:00 <span aria-hidden="true">·</span> Dom cerrado</p>
+                            </div>
+                        </div>
+                        <div class="hero-info-card hero-info-card-price">
+                            <span class="hero-info-icon" aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M16 8.5c-.7-.7-1.7-1-3-1-1.8 0-3 .9-3 2.2s1.1 2 3 2.3 3 1 3 2.3-1.2 2.2-3 2.2c-1.3 0-2.4-.4-3.2-1.2M12.5 5.5v13"></path></svg>
+                            </span>
+                            <div class="hero-info-content">
+                                <p class="hero-info-label">Cuota mensual</p>
+                                <p class="hero-info-price">45 <span>€/mes</span></p>
+                                <p class="hero-info-note">Todas las instalaciones + rutina personalizada inicial.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="lg:col-span-5 flex justify-center lg:justify-end">
@@ -251,22 +323,22 @@
                 </div>
                 <div class="mt-14 grid grid-cols-2 lg:grid-cols-4 gap-4 auto-rows-[220px] lg:auto-rows-[280px]">
                     <figure class="reveal reveal-delay-1 group relative overflow-hidden rounded-2xl border border-surface lg:col-span-2 lg:row-span-2">
-                        <img src="./img/sala-pesas.jpg" alt="Sala de Pesas" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="./img/sala-pesas.jpg" alt="Sala de pesas de BULLTY GYM en Alcalá la Real" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>
                         <figcaption class="absolute bottom-5 left-5 flex items-center gap-2.5"><span class="h-px w-7 bg-primary transition-all duration-500 group-hover:w-10"></span><span class="font-heading text-lg uppercase tracking-widest text-white">Sala de Pesas</span></figcaption>
                     </figure>
                     <figure class="reveal reveal-delay-2 group relative overflow-hidden rounded-2xl border border-surface">
-                        <img src="./img/maquinas-gym.jpg" alt="Máquinas" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="./img/maquinas-gym.jpg" alt="Máquinas de musculación de BULLTY GYM" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>
                         <figcaption class="absolute bottom-5 left-5 flex items-center gap-2.5"><span class="h-px w-7 bg-primary transition-all duration-500 group-hover:w-10"></span><span class="font-heading text-lg uppercase tracking-widest text-white">Máquinas</span></figcaption>
                     </figure>
                     <figure class="reveal reveal-delay-3 group relative overflow-hidden rounded-2xl border border-surface lg:row-span-2">
-                        <img src="./img/zona-cardio.jpg" alt="Zona Cardio" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="./img/zona-cardio.jpg" alt="Zona de cardio de BULLTY GYM" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>
                         <figcaption class="absolute bottom-5 left-5 flex items-center gap-2.5"><span class="h-px w-7 bg-primary transition-all duration-500 group-hover:w-10"></span><span class="font-heading text-lg uppercase tracking-widest text-white">Zona Cardio</span></figcaption>
                     </figure>
                     <figure class="reveal reveal-delay-4 group relative overflow-hidden rounded-2xl border border-surface">
-                        <img src="./img/zona-funcional.jpg" alt="Zona Funcional" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
+                        <img src="./img/zona-funcional.jpg" alt="Zona de entrenamiento funcional de BULLTY GYM" loading="lazy" class="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-110">
                         <div class="absolute inset-0 bg-gradient-to-t from-dark via-dark/20 to-transparent opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>
                         <figcaption class="absolute bottom-5 left-5 flex items-center gap-2.5"><span class="h-px w-7 bg-primary transition-all duration-500 group-hover:w-10"></span><span class="font-heading text-lg uppercase tracking-widest text-white">Zona Funcional</span></figcaption>
                     </figure>
@@ -302,25 +374,36 @@
             </div>
         </section>
 
-        <!-- STATS -->
-        <section class="relative py-24 px-5 sm:px-8 border-t border-surface overflow-hidden">
-            <div class="absolute inset-0 grid-lines opacity-30"></div>
-            <div class="mx-auto max-w-7xl grid grid-cols-2 lg:grid-cols-4 gap-4 bg-surface rounded-xl overflow-hidden">
-                <div class="reveal reveal-delay-1 relative bg-surface p-8 sm:p-12 text-center">
-                    <div class="font-display text-6xl sm:text-8xl text-primary red-text-glow leading-none"><span>500+</span></div>
-                    <p class="mt-3 font-heading text-sm uppercase tracking-[0.3em] text-muted">Socios</p>
+        <!-- VENTAJAS REALES · CUOTA Y EQUIPAMIENTO -->
+        <section id="ventajas-cuota" class="relative py-24 px-5 sm:px-8 border-t border-surface overflow-hidden">
+            <div class="absolute inset-0 grid-lines opacity-30" aria-hidden="true"></div>
+            <div class="relative mx-auto max-w-7xl">
+                <div class="reveal max-w-3xl">
+                    <span class="font-heading text-xs uppercase tracking-[0.4em] text-primary">Claro y sin sorpresas</span>
+                    <h2 class="mt-3 font-display text-5xl sm:text-6xl text-white leading-none">LO QUE TE OFRECE <span class="text-primary">BULLTY</span></h2>
+                    <p class="mt-4 text-muted text-lg leading-relaxed">Una cuota mensual de 45 €, acceso a todas las instalaciones y una rutina personalizada inicial para empezar a entrenar.</p>
                 </div>
-                <div class="reveal reveal-delay-2 relative bg-surface p-8 sm:p-12 text-center">
-                    <div class="font-display text-6xl sm:text-8xl text-primary red-text-glow leading-none"><span>10+</span></div>
-                    <p class="mt-3 font-heading text-sm uppercase tracking-[0.3em] text-muted">Años</p>
-                </div>
-                <div class="reveal reveal-delay-3 relative bg-surface p-8 sm:p-12 text-center">
-                    <div class="font-display text-6xl sm:text-8xl text-primary red-text-glow leading-none"><span>98%</span></div>
-                    <p class="mt-3 font-heading text-sm uppercase tracking-[0.3em] text-muted">Nos recomiendan</p>
-                </div>
-                <div class="reveal reveal-delay-4 relative bg-surface p-8 sm:p-12 text-center">
-                    <div class="font-display text-6xl sm:text-8xl text-primary red-text-glow leading-none"><span>2000+</span></div>
-                    <p class="mt-3 font-heading text-sm uppercase tracking-[0.3em] text-muted">Metros cuadrados</p>
+                <div class="benefits-grid mt-10 grid grid-cols-2 lg:grid-cols-4 gap-4">
+                    <article class="benefit-card reveal reveal-delay-1">
+                        <p class="benefit-value">45 €</p>
+                        <h3 class="benefit-label">Cuota mensual</h3>
+                        <p class="benefit-note">Todas las instalaciones incluidas</p>
+                    </article>
+                    <article class="benefit-card reveal reveal-delay-2">
+                        <p class="benefit-value">10+</p>
+                        <h3 class="benefit-label">Años de experiencia</h3>
+                        <p class="benefit-note">Entrenamiento con propósito</p>
+                    </article>
+                    <article class="benefit-card reveal reveal-delay-3">
+                        <p class="benefit-value benefit-value-text">INCLUIDA</p>
+                        <h3 class="benefit-label">Rutina personalizada inicial</h3>
+                        <p class="benefit-note">Para empezar a entrenar</p>
+                    </article>
+                    <article class="benefit-card reveal reveal-delay-4">
+                        <p class="benefit-value benefit-value-area">2.000+ <span>m²</span></p>
+                        <h3 class="benefit-label">Instalaciones</h3>
+                        <p class="benefit-note">Espacio para entrenar</p>
+                    </article>
                 </div>
             </div>
         </section>
@@ -348,7 +431,7 @@
                             <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 border-primary/40 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span>
                         </button>
                         <div class="faq-content grid transition-[grid-template-rows] duration-500 ease-out grid-rows-[0fr]">
-                            <div class="overflow-hidden"><p class="px-6 pb-7 text-muted leading-relaxed">Acceso completo a todas las instalaciones, creación de rutina personalizada y uso de equipamiento de élite (Life Fitness, OSS Fitness, AdanSport).</p></div>
+                            <div class="overflow-hidden"><p class="px-6 pb-7 text-muted leading-relaxed">La cuota es de <strong class="text-white">45 € al mes</strong> e incluye el acceso a todas las instalaciones y una rutina personalizada inicial. Es una cuota mensual sin permanencia.</p></div>
                         </div>
                     </div>
                     <div class="faq-item border rounded-2xl overflow-hidden transition-colors duration-300 border-surface bg-surface">
@@ -366,7 +449,7 @@
                             <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-300 border-primary/40 text-primary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="faq-icon transition-transform duration-300"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg></span>
                         </button>
                         <div class="faq-content grid transition-[grid-template-rows] duration-500 ease-out grid-rows-[0fr]">
-                            <div class="overflow-hidden"><p class="px-6 pb-7 text-muted leading-relaxed"><strong class="text-white">Lunes a Viernes:</strong> 9:00 – 22:00.<br><strong class="text-white">Sábados:</strong> 12:00 – 14:00.<br><strong class="text-white">Domingos:</strong> Cerrado.</p></div>
+                            <div class="overflow-hidden"><p class="px-6 pb-7 text-muted leading-relaxed"><strong class="text-white">Lunes a viernes:</strong> 09:00–22:00, horario ininterrumpido.<br><strong class="text-white">Sábados:</strong> 12:00–14:00.<br><strong class="text-white">Domingos:</strong> cerrado.</p></div>
                         </div>
                     </div>
                     <div class="faq-item border rounded-2xl overflow-hidden transition-colors duration-300 border-surface bg-surface">
@@ -468,21 +551,22 @@
                         <div class="bg-dark border border-surface rounded-2xl p-8 group hover:border-primary/50 hover:bg-surface transition-all duration-500">
                             <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg></span>
                             <p class="mt-4 font-heading text-xs uppercase tracking-[0.3em] text-muted">Email</p>
-                            <p class="mt-2 text-white leading-relaxed">bulltygym@gmail.com</p>
+                            <p class="mt-2 text-white leading-relaxed"><a href="mailto:bulltygym@gmail.com">bulltygym@gmail.com</a></p>
                         </div>
                         <div class="bg-dark border border-surface rounded-2xl p-8 group hover:border-primary/50 hover:bg-surface transition-all duration-500">
-                            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></span>
-                            <p class="mt-4 font-heading text-xs uppercase tracking-[0.3em] text-muted">Web</p>
-                            <p class="mt-2 text-white leading-relaxed">bulltygym.netlify.app</p>
+                            <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M16 8.5c-.7-.7-1.7-1-3-1-1.8 0-3 .9-3 2.2s1.1 2 3 2.3 3 1 3 2.3-1.2 2.2-3 2.2c-1.3 0-2.4-.4-3.2-1.2M12.5 5.5v13"></path></svg></span>
+                            <p class="mt-4 font-heading text-xs uppercase tracking-[0.3em] text-muted">Cuota mensual</p>
+                            <p class="mt-2 text-white leading-relaxed"><strong class="text-primary text-2xl">45 €</strong> / mes</p>
+                            <p class="mt-2 text-muted text-sm leading-relaxed">Todas las instalaciones y rutina personalizada inicial.</p>
                         </div>
                         <div class="bg-dark border border-surface rounded-2xl p-8 group hover:border-primary/50 hover:bg-surface transition-all duration-500">
                             <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/15 border border-primary/40 text-primary transition-all duration-500 group-hover:bg-primary group-hover:text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg></span>
                             <p class="mt-4 font-heading text-xs uppercase tracking-[0.3em] text-muted">Horario</p>
-                            <p class="mt-2 text-white leading-relaxed">Lun – Vie · 9:00 – 22:00<br>Sab · 12:00 – 14:00</p>
+                            <p class="mt-2 text-white leading-relaxed">Lun–Vie · 09:00–22:00<br>Sáb · 12:00–14:00<br>Dom · cerrado</p>
                         </div>
                     </div>
                     <div class="reveal reveal-delay-2 rounded-2xl overflow-hidden border border-surface min-h-[400px] bg-surface">
-                        <iframe title="Ubicación de BULLTY GYM" src="https://maps.google.com/maps?q=Alcalá+la+Real,+Jaén,+España&z=15&output=embed" class="h-full min-h-[400px] w-full map-dark" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe title="Ubicación de BULLTY GYM" src="https://maps.google.com/maps?q=Calle+Guadalquivir%2C+Pol%C3%ADgono+Fuente+Granada%2C+23680+Alcal%C3%A1+la+Real%2C+Ja%C3%A9n&amp;z=16&amp;output=embed" class="h-full min-h-[400px] w-full map-dark" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>
@@ -502,8 +586,8 @@
                 </div>
                 <p class="mt-6 max-w-md text-muted leading-relaxed">Construye fuerza. Forja disciplina. Un club de fuerza y rendimiento pensado para quienes no se conforman con lo ordinario.</p>
                 <div class="mt-7 flex gap-3">
-                    <a href="#" aria-label="Instagram" class="flex h-11 w-11 items-center justify-center rounded-xl border border-surface text-muted hover:border-primary hover:text-primary hover:-translate-y-0.5 transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
-                    <a href="#" aria-label="Facebook" class="flex h-11 w-11 items-center justify-center rounded-xl border border-surface text-muted hover:border-primary hover:text-primary hover:-translate-y-0.5 transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="https://www.instagram.com/bulltygym/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="flex h-11 w-11 items-center justify-center rounded-xl border border-surface text-muted hover:border-primary hover:text-primary hover:-translate-y-0.5 transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg></a>
+                    <a href="https://www.facebook.com/Bulltygym" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="flex h-11 w-11 items-center justify-center rounded-xl border border-surface text-muted hover:border-primary hover:text-primary hover:-translate-y-0.5 transition-all duration-300"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
                 </div>
             </div>
             
@@ -530,23 +614,37 @@
             </div>
         </div>
         
-        <!-- Línea divisoria y copyright -->
-        <div class="mt-16 pt-6 border-t border-surface">
-            <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-muted">© <script>document.write(new Date().getFullYear())</script> BULLTY GYM. Todos los derechos reservados.</p>
-                <button id="open-cookie-settings" class="text-xs text-muted hover:text-primary transition-colors underline flex items-center gap-1 cursor-pointer group">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="group-hover:rotate-90 transition-transform duration-300"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
-                    Configurar cookies
+  <!-- Copyright, cookies y desarrollo -->
+        <div class="footer-bottom border-t border-surface">
+            <p class="footer-bottom-copy">
+                © <script>document.write(new Date().getFullYear())</script>
+                BULLTY GYM. Todos los derechos reservados.
+            </p>
+
+            <div class="footer-bottom-actions">
+                <button
+                    id="open-cookie-settings"
+                    type="button"
+                    class="footer-cookie-btn"
+                    aria-label="Configurar preferencias de cookies"
+                >
+                    <svg xmlns="http://www.w3.org/2000/svg"
+                         width="14" height="14"
+                         viewBox="0 0 24 24"
+                         fill="none"
+                         stroke="currentColor"
+                         stroke-width="2"
+                         aria-hidden="true">
+                        <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/>
+                        <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                    <span>Cookies</span>
                 </button>
-                <div class="text-center sm:text-left">
-  
-    <p class="text-xs text-muted mt-2">
-        Desarrollado por 
-        <a href="mailto:desarrollowebsur@gmail.com" class="text-primary hover:text-white transition-colors font-semibold">
-            Chic@Ra
-        </a>
-    </p>
-</div>
+
+                <p class="footer-credit">
+                    Desarrollado por
+                    <a href="mailto:desarrollowebsur@gmail.com">Chic@Ra</a>
+                </p>
             </div>
         </div>
     </div>
@@ -587,14 +685,14 @@
 </div>
 
 <!-- PANEL DE CONFIGURACIÓN DE COOKIES (Modal) -->
-<div id="cookie-modal" class="fixed inset-0 z-[10000] hidden">
+<div id="cookie-modal" class="fixed inset-0 z-[10000] hidden" role="dialog" aria-modal="true" aria-labelledby="cookie-modal-title">
     <div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="cookie-modal-backdrop"></div>
     <div class="absolute inset-0 flex items-center justify-center p-4">
         <div class="bg-surface border border-primary/30 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
             <div class="sticky top-0 bg-surface border-b border-surface p-6 flex items-center justify-between">
                 <div class="flex items-center gap-3">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-primary"><circle cx="12" cy="12" r="10"/><circle cx="8" cy="10" r="1.5" fill="currentColor"/><circle cx="15" cy="9" r="1.5" fill="currentColor"/><circle cx="10" cy="15" r="1.5" fill="currentColor"/><circle cx="16" cy="14" r="1.5" fill="currentColor"/></svg>
-                    <h3 class="font-heading text-2xl text-white">Configuración de Cookies</h3>
+                    <h3 id="cookie-modal-title" class="font-heading text-2xl text-white">Configuración de Cookies</h3>
                 </div>
                 <button id="cookie-modal-close" class="text-muted hover:text-white transition-colors">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>

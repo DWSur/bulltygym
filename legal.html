@@ -14,7 +14,7 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
     <link rel="manifest" href="./site.webmanifest" />
  </head>
-<body class="bg-dark text-white antialiased">
+<body class="bg-dark text-white antialiased page-legal">
 
 <!-- HEADER -->
 <header class="fixed top-0 inset-x-0 z-50 bg-dark/95 backdrop-blur-xl border-b border-surface py-4">
@@ -191,17 +191,91 @@
     </div>
 </div>
 
-<!-- FOOTER -->
 
-<!-- FOOTER -->
-<footer class="border-t border-surface bg-dark px-5 sm:px-8 py-10 mt-10">
-    <div class="mx-auto max-w-7xl flex justify-center items-center text-center">
-        <p class="text-sm text-muted leading-relaxed">
-            © 2026 BULLTY GYM. Todos los derechos reservados.
-        </p>
+<!-- FOOTER INFERIOR · MISMO DISEÑO QUE LA PORTADA -->
+<footer class="border-t border-surface bg-dark px-5 sm:px-8 py-6 mt-10">
+    <div class="mx-auto max-w-7xl">
+        <div class="footer-bottom">
+            <p class="footer-bottom-copy">© <script>document.write(new Date().getFullYear())</script> BULLTY GYM. Todos los derechos reservados.</p>
+            <div class="footer-bottom-actions">
+                <button id="open-cookie-settings" type="button" class="footer-cookie-btn" aria-label="Configurar preferencias de cookies">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"/><circle cx="12" cy="12" r="3"/></svg>
+                    <span>Cookies</span>
+                </button>
+                <p class="footer-credit">Desarrollado por <a href="mailto:desarrollowebsur@gmail.com">Chic@Ra</a></p>
+            </div>
+        </div>
     </div>
 </footer>
 
+<!-- PANEL DE PREFERENCIAS DE COOKIES -->
+<div aria-labelledby="cookie-modal-title" aria-modal="true" class="fixed inset-0 z-[10000] hidden" id="cookie-modal" role="dialog">
+<div class="absolute inset-0 bg-black/80 backdrop-blur-sm" id="cookie-modal-backdrop"></div>
+<div class="absolute inset-0 flex items-center justify-center p-4">
+<div class="bg-surface border border-primary/30 rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl">
+<div class="sticky top-0 bg-surface border-b border-surface p-6 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<svg class="text-primary" fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10"></circle><circle cx="8" cy="10" fill="currentColor" r="1.5"></circle><circle cx="15" cy="9" fill="currentColor" r="1.5"></circle><circle cx="10" cy="15" fill="currentColor" r="1.5"></circle><circle cx="16" cy="14" fill="currentColor" r="1.5"></circle></svg>
+<h3 class="font-heading text-2xl text-white" id="cookie-modal-title">Configuración de Cookies</h3>
+</div>
+<button class="text-muted hover:text-white transition-colors" id="cookie-modal-close">
+<svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+</button>
+</div>
+<div class="p-6 space-y-6">
+<!-- Cookies Necesarias (Siempre activas) -->
+<div class="bg-dark/50 border border-surface rounded-xl p-5">
+<div class="flex items-start justify-between gap-4">
+<div class="flex-1">
+<div class="flex items-center gap-2 mb-2">
+<h4 class="font-heading text-lg text-white">Cookies Necesarias</h4>
+<span class="text-xs bg-primary/20 text-primary px-2 py-0.5 rounded-full font-semibold">Siempre activas</span>
+</div>
+<p class="text-sm text-muted">Esenciales para el funcionamiento básico del sitio web. Sin estas cookies, el sitio no funcionaría correctamente.</p>
+</div>
+<div class="flex items-center">
+<div class="w-11 h-6 bg-primary rounded-full relative cursor-not-allowed"><div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div></div>
+</div>
+</div>
+</div>
+<!-- Cookies Analíticas (SIN 'checked' por defecto, cumple RGPD) -->
+<div class="bg-dark/50 border border-surface rounded-xl p-5 hover:border-primary/30 transition-colors">
+<div class="flex items-start justify-between gap-4">
+<div class="flex-1">
+<h4 class="font-heading text-lg text-white mb-2">Cookies Analíticas</h4>
+<p class="text-sm text-muted">Nos permiten contar las visitas y las fuentes de tráfico para medir y mejorar el rendimiento de nuestro sitio (Google Analytics).</p>
+</div>
+<div class="flex items-center">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" id="cookie-analytics-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+<!-- Cookies de Marketing (SIN 'checked' por defecto, cumple RGPD) -->
+<div class="bg-dark/50 border border-surface rounded-xl p-5 hover:border-primary/30 transition-colors">
+<div class="flex items-start justify-between gap-4">
+<div class="flex-1">
+<h4 class="font-heading text-lg text-white mb-2">Cookies de Marketing</h4>
+<p class="text-sm text-muted">Se utilizan para rastrear a los visitantes y mostrar anuncios relevantes en redes sociales y otras plataformas.</p>
+</div>
+<div class="flex items-center">
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" id="cookie-marketing-toggle" type="checkbox"/>
+<div class="w-11 h-6 bg-surface peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+</label>
+</div>
+</div>
+</div>
+</div>
+<div class="sticky bottom-0 bg-surface border-t border-surface p-6 flex flex-col sm:flex-row gap-3">
+<button class="flex-1 px-6 py-3 bg-primary hover:bg-white hover:text-primary text-white font-heading font-bold uppercase tracking-widest rounded-lg transition-all" id="cookie-save-preferences">Guardar preferencias</button>
+<button class="flex-1 px-6 py-3 border border-primary text-primary hover:bg-primary hover:text-white font-heading font-semibold uppercase tracking-widest rounded-lg transition-all" id="cookie-accept-all-modal">Aceptar todas</button>
+</div>
+</div>
+</div>
+</div>
 
 <!-- MENÚ LEGAL FLOTANTE PARA MÓVIL -->
 <details class="legal-float-menu">
@@ -256,6 +330,72 @@ document.querySelectorAll('.legal-float-menu nav a').forEach(link => {
 });
 </script>
 
+
+<script>
+/* Preferencias de cookies en legal.html: comparte el mismo almacenamiento de la portada. */
+(() => {
+    const modal = document.getElementById('cookie-modal');
+    const opener = document.getElementById('open-cookie-settings');
+    const backdrop = document.getElementById('cookie-modal-backdrop');
+    const closeButton = document.getElementById('cookie-modal-close');
+    const analyticsToggle = document.getElementById('cookie-analytics-toggle');
+    const marketingToggle = document.getElementById('cookie-marketing-toggle');
+    const consentKey = 'bullty_cookie_consent';
+
+    const readConsent = () => {
+        try { return JSON.parse(localStorage.getItem(consentKey) || 'null'); }
+        catch (_) { return null; }
+    };
+    const openModal = () => {
+        if (!modal) return;
+        const consent = readConsent();
+        if (analyticsToggle) analyticsToggle.checked = consent?.analytics === true;
+        if (marketingToggle) marketingToggle.checked = consent?.marketing === true;
+        modal.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
+        closeButton?.focus();
+    };
+    const closeModal = () => {
+        if (!modal) return;
+        modal.classList.add('hidden');
+        document.body.style.overflow = '';
+        opener?.focus();
+    };
+    const savePreferences = (analytics, marketing) => {
+        const consent = { necessary: true, analytics, marketing, timestamp: new Date().toISOString() };
+        try { localStorage.setItem(consentKey, JSON.stringify(consent)); } catch (_) {}
+        try {
+            const expires = new Date(Date.now() + 365 * 24 * 60 * 60 * 1000);
+            document.cookie = `cookie_consent=${encodeURIComponent(JSON.stringify(consent))};expires=${expires.toUTCString()};path=/;SameSite=Lax`;
+        } catch (_) {}
+        closeModal();
+    };
+
+    opener?.addEventListener('click', openModal);
+    closeButton?.addEventListener('click', closeModal);
+    backdrop?.addEventListener('click', closeModal);
+    document.getElementById('cookie-save-preferences')?.addEventListener('click', () => {
+        savePreferences(analyticsToggle?.checked === true, marketingToggle?.checked === true);
+    });
+    document.getElementById('cookie-accept-all-modal')?.addEventListener('click', () => savePreferences(true, true));
+    document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && modal && !modal.classList.contains('hidden')) closeModal();
+    });
+})();
+</script>
+
+
+<script>
+/* Evita que el menú flotante de secciones tape el footer en móvil. */
+(() => {
+    const legalFooter = document.querySelector('body.page-legal footer');
+    if (!legalFooter || !('IntersectionObserver' in window)) return;
+    const footerObserver = new IntersectionObserver(entries => {
+        document.body.classList.toggle('legal-footer-visible', entries[0].isIntersecting);
+    }, { threshold: 0.05 });
+    footerObserver.observe(legalFooter);
+})();
+</script>
 
 </body>
 </html>
